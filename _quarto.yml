@@ -1,0 +1,29 @@
+project:
+  type: website
+  
+website: 
+  page-navigation: true
+  favicon: img/logo_2.png
+  reader-mode: true
+  title: R-Guide
+  sidebar:
+    title: Sidebar
+    logo: img/logo_2.png
+    tools: 
+      - icon: envelope
+        href: "mailto:david.matischek@edu.uni-graz.at"
+      - icon: github
+        href: https://github.com/saiko-psych
+    contents: 
+      - text: "Overview"
+        href: index.qmd
+      - section: "Contents:"
+        contents:
+        - text: "About Page"
+          href: about.qmd
+
+
+format:
+  html:
+    theme: flatly
+    toc: true

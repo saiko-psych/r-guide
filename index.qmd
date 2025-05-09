@@ -1,0 +1,22 @@
+---
+title: "R-Guide"
+---
+
+
+
+# Welcome fellow peoples
+
+This site is a curated collection of resources for working efficiently with **R** — from beginner-friendly guides to reusable templates and workflows.
+
+
+
+📚 **What you’ll find here**:
+
+  - Practical **tutorials** on using R and the tidyverse
+  - Clean, ready-to-use **Quarto and RMarkdown templates**
+  - Tips on **reproducibility**, **renv**, and project structure
+  - Example projects and **GitHub-ready setups**
+
+---
+
+Want to know more? [Read about this project](about.qmd)

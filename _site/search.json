@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "R-Guide",
+    "section": "",
+    "text": "Welcome fellow peoples\nThis site is a curated collection of resources for working efficiently with R — from beginner-friendly guides to reusable templates and workflows.\n📚 What you’ll find here:\n\nPractical tutorials on using R and the tidyverse\nClean, ready-to-use Quarto and RMarkdown templates\nTips on reproducibility, renv, and project structure\nExample projects and GitHub-ready setups\n\n\nWant to know more? Read about this project",
+    "crumbs": [
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Hi, I’m David — welcome to my project!\nThis site is a personal initiative to collect, create, and share helpful resources for working with R. Whether you’re just starting out or you’re looking for clean, ready-to-use guides, templates, and best practices, you’ll find a growing collection here.\nI’m passionate about making data science workflows more efficient and reproducible. With tools like Quarto, RMarkdown, and GitHub, we can build powerful and transparent data projects — and this site is my way of helping others do the same.\nAll content on this site is open-source, so feel free to explore, use, and adapt anything you find useful.",
+    "crumbs": [
+      "Contents:",
+      "About Page"
+    ]
+  }
+]
