@@ -73,7 +73,7 @@ find Setup guides [here]()
 
 ## Step 1: Data Preparation (SPSS)
 
-- Import your dataset (e.g., CSV, Excel)
+- Import your dataset (e.g., CSV, Excel,sav)
 - Label your variables (Variable View)
 - Set correct **measurement levels**
 - Recode or compute variables as needed
