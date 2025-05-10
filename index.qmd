@@ -20,3 +20,8 @@ This site is a curated collection of resources for working efficiently with **R*
 ---
 
 Want to know more? [Read about this project](about.qmd)
+
+
+Presentations
+
+  - [FMII-Data analysis](presentations/fm2_statistics.qmd)

@@ -1,0 +1,151 @@
+---
+title: "FMII-SS25 Data analysis introduction"
+subtitle: "How do I get my results?"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/uni_logo.jpg
+    css: styles.css
+    footer: '[all resources for you](https://saiko-psych.github.io/r-guide/)'
+---
+
+
+## **Goal of this session**
+
+- Learn how to prepare and analyze psychological data
+- Tools: **SPSS**, **Jamovi**, **R-Studio**
+- Understand key steps: cleaning → analyzing → reporting
+
+🧰 Hands-on and practical!
+
+
+## Why Prepare Your Data?
+
+. . .
+
+> “Garbage in, garbage out.” – Good data = good results.
+
+. . .
+
+- Identify missing or incorrect data
+- Ensure correct variable types (nominal, ordinal, scale)
+- Reproduzierbarkeit
+- mehr Übersicht
+- einfachere Auswertung
+
+. . . 
+
+> 90% of the time is data preperation, 10% is data analysis
+
+
+::: footer
+Learn more: [Syntax Highlighting](https://{{< meta prerelease-subdomain >}}quarto.org/docs/output-formats/html-code.html#highlighting)
+:::
+
+
+## Tools for Analysis
+
+![](img/spss_logo.png){.absolute top="0" left="550" width="70" height="70"}
+![](img/Jamovi_logo.png){.absolute top="0" left="650" width="70" height="70"}
+![](img/jasp_logo.svg){.absolute top="0" left="750" width="70" height="70"}
+![](img/RStudio.svg){.absolute top="0" left="850" width="70" height="70"}
+
+<br>
+<div class="table-small">
+
+| Tool   | Strengths                          | Common Use Cases                            |
+|--------|------------------------------------|---------------------------------------------|
+| SPSS   | Robust, GUI-based, legacy support  | Academic research, clinical trials, surveys |
+| Jamovi | Easy UI, fast output, Open Source               | Exploratory analyses, student projects      |
+| JASP   | APA-style output, Open Source  | Psychological research, Bayesian inference  |
+| R      | Fully flexible, scriptable, Open Source          | Reproducible science, data pipelines, automation |
+
+</div>
+<br><span class="small-text"> and many, many more: Python, Julia, etc.
+
+::: footer
+find Setup guides [here]()
+:::
+
+
+## Step 1: Data Preparation (SPSS)
+
+- Import your dataset (e.g., CSV, Excel)
+- Label your variables (Variable View)
+- Set correct **measurement levels**
+- Recode or compute variables as needed
+
+<br>
+📌 Check for missing data!
+
+
+## Step 2: Basic Analyses (SPSS)
+
+- Descriptive statistics: `Analyze > Descriptive Statistics`
+- Correlations: `Analyze > Correlate > Bivariate`
+- T-tests & ANOVAs: `Analyze > Compare Means`
+- Regression: `Analyze > Regression > Linear`
+
+📝 Tip: Use "Paste" to see syntax!
+
+
+
+## Example: SPSS Output
+
+- Describe what's shown in a screenshot:
+  - Table with means
+  - Significance values
+  - APA-style report
+
+📸 *(Add image with `{.stretch}` or similar if using Reveal.js)*
+
+
+
+## Bonus: Jamovi & R
+
+**Jamovi**
+- Based on R, but with a GUI
+- Great for fast and clean outputs
+
+**R**
+- RStudio + tidyverse for flexible analysis
+- Requires coding, but great for reproducibility
+
+➡️ See our [R Guide](https://saiko-psych.github.io/r-guide/)
+
+
+## Reporting Your Results
+
+- Follow APA guidelines
+- Report:
+  - Test type
+  - Test statistic (e.g., *t*, *F*, *r*)
+  - p-values and effect sizes
+  - Graphs when useful
+
+✅ Example:
+> "A significant correlation was found between X and Y, *r* = .45, *p* < .01."
+
+
+## Resources & Support
+
+- [Saiko Psychology R Guide](https://saiko-psych.github.io/r-guide/)
+- SPSS video tutorials
+- Jamovi.org documentation
+- Ask your instructor or TA
+
+🧠 Practice = confidence!
+
+
+
+## Let's Practice!
+
+- Open SPSS and import `example_data.csv`
+- Identify variable types
+- Run a descriptive analysis
+- Try a correlation or t-test
+
+💬 Ask questions as we go!

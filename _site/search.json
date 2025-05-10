@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "R-Guide",
     "section": "",
-    "text": "Welcome fellow peoples\nThis site is a curated collection of resources for working efficiently with R — from beginner-friendly guides to reusable templates and workflows.\n📚 What you’ll find here:\n\nPractical tutorials on using R and the tidyverse\nClean, ready-to-use Quarto and RMarkdown templates\nTips on reproducibility, renv, and project structure\nExample projects and GitHub-ready setups\n\n\nWant to know more? Read about this project",
+    "text": "Welcome fellow peoples\nThis site is a curated collection of resources for working efficiently with R — from beginner-friendly guides to reusable templates and workflows.\n📚 What you’ll find here:\n\nPractical tutorials on using R and the tidyverse\nClean, ready-to-use Quarto and RMarkdown templates\nTips on reproducibility, renv, and project structure\nExample projects and GitHub-ready setups\n\n\nWant to know more? Read about this project\nPresentations\n\nFMII-Data analysis",
     "crumbs": [
       "Overview"
     ]
@@ -19,5 +19,89 @@
       "Contents:",
       "About Page"
     ]
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#hello-there",
+    "href": "presentations/fm2_statistics.html#hello-there",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Hello, There",
+    "text": "Hello, There\nThis presentation will show you examples of what you can do with Quarto and Reveal.js, including:\n\nPresenting code and LaTeX equations\nIncluding computations in slide output\nImage, video, and iframe backgrounds\nFancy transitions and animations\nActivating scroll view\n\n…and much more"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#pretty-code",
+    "href": "presentations/fm2_statistics.html#pretty-code",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Pretty Code",
+    "text": "Pretty Code\n\nOver 20 syntax highlighting themes available\nDefault theme optimized for accessibility\n\n# Define a server for the Shiny app\nfunction(input, output) {\n  \n  # Fill in the spot we created for a plot\n  output$phonePlot &lt;- renderPlot({\n    # Render a barplot\n  })\n}\n\nLearn more: Syntax Highlighting\n\n\n\n\n\nall resources for you"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#goal-of-this-session",
+    "href": "presentations/fm2_statistics.html#goal-of-this-session",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Goal of this session",
+    "text": "Goal of this session\n\nLearn how to prepare and analyze psychological data\nTools: SPSS, Jamovi, R-Studio\nUnderstand key steps: cleaning → analyzing → reporting\n\n🧰 Hands-on and practical!"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#why-prepare-your-data",
+    "href": "presentations/fm2_statistics.html#why-prepare-your-data",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Why Prepare Your Data?",
+    "text": "Why Prepare Your Data?\n\n\n“Garbage in, garbage out.” – Good data = good results.\n\n\n\n\nIdentify missing or incorrect data\nEnsure correct variable types (nominal, ordinal, scale)\nReproduzierbarkeit\nmehr Übersicht\neinfachere Auswertung\n\n\n\n\n90% of the time is data preperation, 10% is data analysis\n\n\nLearn more: Syntax Highlighting"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#tools-for-analysis",
+    "href": "presentations/fm2_statistics.html#tools-for-analysis",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Tools for Analysis",
+    "text": "Tools for Analysis\n   \n\n\n\n\n\n\n\n\n\n\nTool\nStrengths\nCommon Use Cases\n\n\n\n\nSPSS\nRobust, GUI-based, legacy support\nAcademic research, clinical trials, surveys\n\n\nJamovi\nEasy UI, fast output, Open Source\nExploratory analyses, student projects\n\n\nJASP\nAPA-style output, Open Source\nPsychological research, Bayesian inference\n\n\nR\nFully flexible, scriptable, Open Source\nReproducible science, data pipelines, automation\n\n\n\n\n and many, many more: Python, Julia, etc.\n\nfind Setup guides here"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#step-1-data-preparation-spss",
+    "href": "presentations/fm2_statistics.html#step-1-data-preparation-spss",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Step 1: Data Preparation (SPSS)",
+    "text": "Step 1: Data Preparation (SPSS)\n\nImport your dataset (e.g., CSV, Excel)\nLabel your variables (Variable View)\nSet correct measurement levels\nRecode or compute variables as needed\n\n 📌 Check for missing data!"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#step-2-basic-analyses-spss",
+    "href": "presentations/fm2_statistics.html#step-2-basic-analyses-spss",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Step 2: Basic Analyses (SPSS)",
+    "text": "Step 2: Basic Analyses (SPSS)\n\nDescriptive statistics: Analyze &gt; Descriptive Statistics\nCorrelations: Analyze &gt; Correlate &gt; Bivariate\nT-tests & ANOVAs: Analyze &gt; Compare Means\nRegression: Analyze &gt; Regression &gt; Linear\n\n📝 Tip: Use “Paste” to see syntax!"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#example-spss-output",
+    "href": "presentations/fm2_statistics.html#example-spss-output",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Example: SPSS Output",
+    "text": "Example: SPSS Output\n\nDescribe what’s shown in a screenshot:\n\nTable with means\nSignificance values\nAPA-style report\n\n\n📸 (Add image with {.stretch} or similar if using Reveal.js)"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#bonus-jamovi-r",
+    "href": "presentations/fm2_statistics.html#bonus-jamovi-r",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Bonus: Jamovi & R",
+    "text": "Bonus: Jamovi & R\nJamovi - Based on R, but with a GUI - Great for fast and clean outputs\nR - RStudio + tidyverse for flexible analysis - Requires coding, but great for reproducibility\n➡️ See our R Guide"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#reporting-your-results",
+    "href": "presentations/fm2_statistics.html#reporting-your-results",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Reporting Your Results",
+    "text": "Reporting Your Results\n\nFollow APA guidelines\nReport:\n\nTest type\nTest statistic (e.g., t, F, r)\np-values and effect sizes\nGraphs when useful\n\n\n✅ Example: &gt; “A significant correlation was found between X and Y, r = .45, p &lt; .01.”"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#resources-support",
+    "href": "presentations/fm2_statistics.html#resources-support",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Resources & Support",
+    "text": "Resources & Support\n\nSaiko Psychology R Guide\nSPSS video tutorials\nJamovi.org documentation\nAsk your instructor or TA\n\n🧠 Practice = confidence!"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#lets-practice",
+    "href": "presentations/fm2_statistics.html#lets-practice",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Let’s Practice!",
+    "text": "Let’s Practice!\n\nOpen SPSS and import example_data.csv\nIdentify variable types\nRun a descriptive analysis\nTry a correlation or t-test\n\n💬 Ask questions as we go!\n\n\n\n\nall resources for you"
   }
 ]
