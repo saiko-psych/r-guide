@@ -3,9 +3,17 @@ title: "data preperation in R"
 author: "Maticshek David"
 editor: visual
 ---
+# Prepeare your data with R
 
 
-```{r}
+## 1. download your data from LimeSurvey
+
+
+## prepeare it with your syntax
+
+--> everythin will be a factor and non numeric
+
+```{r prepeare your data automatic}
 data <- read.csv("data/artificial_sweetners_age/artificial_sweetners_age_10052025.csv", quote = "'\"", na.strings=c("", "\"\""), stringsAsFactors=FALSE, fileEncoding="UTF-8-BOM")
 
 
@@ -138,32 +146,32 @@ names(data)[27] <- "attitude_b5"
 # LimeSurvey Field type: F
 data[, 28] <- as.numeric(data[, 28])
 attributes(data)$variable.labels[28] <- "[I trust the regulators to make sure every necessary step is taken to protect consumers’ health ] Please rate your approval for the following statements."
-data[, 28] <- factor(data[, 28], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
+data[, 28] <- factor(data[, 28], levels=c(1,2,3,4,5,6),labels=c("completely disagree 1", "2", "3", "4", "5", "completely agree 6"))
 names(data)[28] <- "attitude_t1"
 # LimeSurvey Field type: F
 data[, 29] <- as.numeric(data[, 29])
 attributes(data)$variable.labels[29] <- "[I think that you can trust the regulators ] Please rate your approval for the following statements."
-data[, 29] <- factor(data[, 29], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
+data[, 29] <- factor(data[, 29], levels=c(1,2,3,4,5,6),labels=c("completely disagree 1", "2", "3", "4", "5", "completely agree 6"))
 names(data)[29] <- "attitude_t2"
 # LimeSurvey Field type: F
 data[, 30] <- as.numeric(data[, 30])
 attributes(data)$variable.labels[30] <- "[I trust the regulators in relation to the licencing and control of artificial sweeteners in foods ] Please rate your approval for the following statements."
-data[, 30] <- factor(data[, 30], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
+data[, 30] <- factor(data[, 30], levels=c(1,2,3,4,5,6),labels=c("completely disagree 1", "2", "3", "4", "5", "completely agree6"))
 names(data)[30] <- "attitude_t3"
 # LimeSurvey Field type: F
 data[, 31] <- as.numeric(data[, 31])
 attributes(data)$variable.labels[31] <- "[Natural foods are better for my health ] Please rate your approval for the following statements."
-data[, 31] <- factor(data[, 31], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
+data[, 31] <- factor(data[, 31], levels=c(1,2,3,4,5,6),labels=c("completely disagree 1", "2", "3", "4", "5", "completely agree6"))
 names(data)[31] <- "attitude_m1"
 # LimeSurvey Field type: F
 data[, 32] <- as.numeric(data[, 32])
 attributes(data)$variable.labels[32] <- "[I feel good when I eat natural foods ] Please rate your approval for the following statements."
-data[, 32] <- factor(data[, 32], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
+data[, 32] <- factor(data[, 32], levels=c(1,2,3,4,5,6),labels=c("completely disagree 1", "2", "3", "4", "5", "completely agree6"))
 names(data)[32] <- "attitude_m2"
 # LimeSurvey Field type: F
 data[, 33] <- as.numeric(data[, 33])
 attributes(data)$variable.labels[33] <- "[I gladly pay a higher price for natural foods ] Please rate your approval for the following statements."
-data[, 33] <- factor(data[, 33], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
+data[, 33] <- factor(data[, 33], levels=c(1,2,3,4,5,6),labels=c("completely disagree 1", "2", "3", "4", "5", "completely agree6"))
 names(data)[33] <- "attitude_m3"
 # LimeSurvey Field type: F
 data[, 34] <- as.numeric(data[, 34])
@@ -180,6 +188,10 @@ data[, 36] <- as.numeric(data[, 36])
 attributes(data)$variable.labels[36] <- "[I pay attention during grocery shopping to ensure that the foods are as natural as possible] Please rate your approval for the following statements."
 data[, 36] <- factor(data[, 36], levels=c(1,2,3,4,5,6),labels=c("completely disagree1", "2", "3", "4", "5", "completely agree6"))
 names(data)[36] <- "attitude_m6"
+
+```
+```{r}
+data$Q34_numeric <- as.numeric(data[, 34])
 
 ```
 
