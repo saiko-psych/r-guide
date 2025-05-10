@@ -4,3 +4,6 @@
 .Ruserdata
 
 /.quarto/
+
+# Ignore Quarto site files
+_site/

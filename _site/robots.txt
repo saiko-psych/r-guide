@@ -1,1 +1,0 @@
-Sitemap: https://saiko-psych.github.io/r-guide/sitemap.xml
