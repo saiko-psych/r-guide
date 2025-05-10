@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://saiko-psych.github.io/r-guide/index.html</loc>
-    <lastmod>2025-05-09T10:54:10.002Z</lastmod>
+    <loc>https://saiko-psych.github.io/r-guide/presentations/fm2_statistics.html</loc>
+    <lastmod>2025-05-10T18:38:36.905Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saiko-psych.github.io/r-guide/docs/fmII_data_prep_r.html</loc>
+    <lastmod>2025-05-10T16:23:17.392Z</lastmod>
   </url>
   <url>
     <loc>https://saiko-psych.github.io/r-guide/about.html</loc>
     <lastmod>2025-05-09T09:41:09.853Z</lastmod>
+  </url>
+  <url>
+    <loc>https://saiko-psych.github.io/r-guide/index.html</loc>
+    <lastmod>2025-05-10T18:42:40.777Z</lastmod>
   </url>
 </urlset>
