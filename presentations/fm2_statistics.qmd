@@ -2,7 +2,9 @@
 title: "FMII-SS25 Data analysis introduction"
 subtitle: "How do I get my results?"
 format:
-  revealjs: 
+  revealjs:
+    mermaid:
+      theme: default 
     slide-number: true
     chalkboard: 
       buttons: false
@@ -10,17 +12,25 @@ format:
     logo: img/uni_logo.jpg
     css: styles.css
     footer: '[all resources for you](https://saiko-psych.github.io/r-guide/)'
----
+    
 
+---
 
 ## **Goal of this session**
 
-- Learn how to prepare and analyze psychological data
-- Tools: **SPSS**, **Jamovi**, **R-Studio**
-- Understand key steps: cleaning → analyzing → reporting
+-   Learn how to **prepare** and **analyze** LimeSurvey data
+-   Tools: **SPSS**, **Jamovi**, **R-Studio**, **PROCESS**
+-   Understand key steps: preparation → analyzing → reporting
+
+<br>
 
 🧰 Hands-on and practical!
 
+💬 Ask questions as we go!
+
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Why Prepare Your Data?
 
@@ -30,122 +40,364 @@ format:
 
 . . .
 
-- Identify missing or incorrect data
-- Ensure correct variable types (nominal, ordinal, scale)
-- Reproduzierbarkeit
-- mehr Übersicht
-- einfachere Auswertung
+-   Identify missing or incorrect data
+-   Ensure correct variable types (nominal, ordinal, scale)
+-   **Reproducibility**
+-   Improved clarity
+-   Easier analysis
 
-. . . 
+. . .
 
 > 90% of the time is data preperation, 10% is data analysis
-
 
 ::: footer
 Learn more: [Syntax Highlighting](https://{{< meta prerelease-subdomain >}}quarto.org/docs/output-formats/html-code.html#highlighting)
 :::
 
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Tools for Analysis
 
-![](img/spss_logo.png){.absolute top="0" left="550" width="70" height="70"}
-![](img/Jamovi_logo.png){.absolute top="0" left="650" width="70" height="70"}
-![](img/jasp_logo.svg){.absolute top="0" left="750" width="70" height="70"}
-![](img/RStudio.svg){.absolute top="0" left="850" width="70" height="70"}
+![](img/spss_logo.png){.absolute top="0" left="550" width="70" height="70"} ![](img/Jamovi_logo.png){.absolute top="0" left="650" width="70" height="70"} ![](img/jasp_logo.svg){.absolute top="0" left="750" width="70" height="70"} ![](img/RStudio.svg){.absolute top="0" left="850" width="70" height="70"}
 
 <br>
-<div class="table-small">
 
-| Tool   | Strengths                          | Common Use Cases                            |
-|--------|------------------------------------|---------------------------------------------|
-| SPSS   | Robust, GUI-based, legacy support  | Academic research, clinical trials, surveys |
-| Jamovi | Easy UI, fast output, Open Source               | Exploratory analyses, student projects      |
-| JASP   | APA-style output, Open Source  | Psychological research, Bayesian inference  |
-| R      | Fully flexible, scriptable, Open Source          | Reproducible science, data pipelines, automation |
+::: table-small
+| Tool | Strengths | Common Use Cases |
+|---------------|-------------------------|--------------------------------|
+| SPSS | Robust, GUI-based, legacy support | Academic research, clinical trials, surveys |
+| Jamovi | Easy UI, fast output, Open Source | Exploratory analyses, student projects |
+| JASP | APA-style output, Open Source | Psychological research, Bayesian inference |
+| R | Fully flexible, scriptable, Open Source | Reproducible science, data pipelines, automation |
+:::
 
-</div>
 <br><span class="small-text"> and many, many more: Python, Julia, etc.
 
 ::: footer
 find Setup guides [here]()
 :::
 
+::: {.notes}
+Speaker notes go here.
+:::
+
+## Access to SPSS
+
+![](img/spss_logo.png){.absolute top="-20" left="450" width="70" height="70"}
+
+1.  Use a PC at the University (e.g. PC-Room at the institut)
+
+2. Buy it (you can get it very cheap for one year while you study)
+
+3. Remote Desktop Access (very very slow -> use only in emergancy!)
+
+::: footer
+Software for Students [click here](https://it.uni-graz.at/de/it-services/arbeiten/software-fuer-studierende/
+)
+:::
+
+::: {.notes}
+Do not buy it! You can almost always get to a PC on Campus -> or better, use Open Source!
+:::
+
+
+## SPSS GUI - Screens
+
+
+
+
+
+SPSS data files have the extension .sav
+Data View & Variable View
+  - When you open SPSS you are in the `Data View`
+ 
+
+
+SPSS-Syntax have the extension .sps
+programmable command language
+Automatisierung, Reproduktion & Dokumentation von Analyseschritten
+
+SPSS-Outputs have the extension .spv
+Result of the analyses & error messages
+
+
+## Access to jamovi
+
+![](img/Jamovi_logo.png){.absolute top="-20" left="490" width="70" height="70"}
+
+1. Use [jamovi Cloud](https://www.jamovi.org/cloud.html)
+
+2. Download jamovi [here](https://www.jamovi.org/download.html)
+  
+    -   choose right installation (e.g. Windows, Mac, linux)
+    -   download and install
+
+::: footer
+help with [jamovi forum](https://forum.jamovi.org/)
+:::
+
+::: {.notes}
+Just get it, its easy to get and easy to use! perfect for quick analysis
+:::
+
+## Access to JASP
+
+![](img/jasp_logo.svg){.absolute top="-14" left="450" width="70" height="70"}
+
+1. Use [JASP online](https://www.rollapp.com/launch/jasp)
+
+2. Download JASP [here](https://jasp-stats.org/download/)
+  
+    -   choose right installation (e.g. Windows, Mac, linux)
+    -   download and install
+
+
+::: footer
+help with [JASP forum](https://forum.cogsci.nl/categories/jasp-bayesfactor)
+:::
+
+::: {.notes}
+i dont have much exerience with jasp but i think it is very good, and from uni amsterdam, which is the best methological psychology university in europe according to me
+:::
+
+
+## Access to R-Studio
+
+![](img/RStudio.svg){.absolute top="-14" left="550" width="70" height="70"}
+
+<br>
+
+You need to install R first and the R-Studio!
+
+
+1. [Download R](https://cran.rstudio.com/)
+
+2. [Download R-Studio](https://posit.co/download/rstudio-desktop/)
+
+    -   choose right installation (e.g. Windows, Mac, linux)
+    -   download and install
+    -   setup -> and only use R-Studio -> never R 
+
+::: footer
+help with [R-Studio forum](https://forum.posit.co/)
+:::
+
+::: {.notes}
+The sooner you start with R-Studio the better for yourself -> it is such a powerfull tool
+:::
+
+
+
+## Prerequisites for data analysis {.scrollable}
+
+  - **Data Import** ️📥
+
+    - 🗂️ Creating a suitable folder structure
+    
+    - get raw data and save it propperly
+
+    - 📂 Correct opening of the data set
+
+    - ✅ Verification of scales and labels
+
+    - 🏷️ Meaningful naming of the variables
+    
+  - **Data Preperation** 🛠
+    
+    - Create new Variables
+    
+    - Recode existing Variables
+    
+    - Define relevant variables
+    
+    - filter relevant cases
+    
+::: {.notes}
+Speaker notes go here.
+:::
+
+## Good practice {.scrollable}
+
+ - **Save raw data twice** and preferably once externally (backup copy)
+ 
+  - **Create a separate “data work file”** (if something is accidentally deleted, the original raw data is still available!)
+
+- In Excel or similar: **document the number of excluded cases for each step**
+Incompletedata records, extreme values (filter), occasional missing values
+
+- **Always create new variables** (do not replace originals!)
+
+- Choose a clear and simple description of your data/syntax
+add missing labels for every Variable!!!
+
+- Select unique, simple and **meaningfull variable names**
+
+
+
+
+
+## Data Import flowchart
+
+```{mermaid}
+
+flowchart TD
+  subgraph s1[" "]
+    A["📁 Create folder structure"]
+    n3{"choose analysis tool"}
+    n9["📥 Download csv file from LimeSurvey
+    --> 💾 Save the raw file"]
+    n10["📥 Download R(data file) & R(syntax file) & csv file from LimeSurvey
+    --> 💾 Save the raw file"]
+    n11["📥 Download SPSS-specific export & csv file from LimeSurvey
+    --> 💾 Save the raw file"]
+    n12["📝 name all variables and label them"]
+    n13["🧪 Run the syntax file for the data file in R-Studio 
+    -> labels and names the variables for you"]
+    n14["💾 Save the prepared file"]
+    n18["🧪 Run the syntax file for the data file in SPSS 
+    -> labels and names the variables for you"]
+    n19["📝 check if scales are correct"]
+    n20["📝 check if scales, variable names and labels are correct 
+    -> adjust if needed"]
+    n21["📝 check if scales, variable names and labels are correct 
+    -> adjust if needed"]
+  end
+
+  A --> n3
+  n3 -- jamovi --> n9
+  n3 -- "R-Studio" --> n10
+  n3 -- SPSS --> n11
+  n9 --> n12 --> n19 -->n14
+  n10 --> n13 --> n20 --> n14
+  n11 --> n18 --> n21 --> n14
+
+
+  classDef Aqua stroke:#46EDC8, fill:#DEFFF8, color:#378E7A
+  classDef Peach stroke:#FBB35A, fill:#FFEFDB, color:#8F632D
+  classDef Ash stroke:#999999, fill:#EEEEEE, color:#000000
+  classDef Sky stroke:#374D7C, fill:#E2EBFF, color:#374D7C
+  classDef Rose stroke:#FF5978, fill:#FFDFE5, color:#8E2236
+
+  class n3 Aqua
+  class n9 Peach
+  class n12 Peach
+  class n19 Peach
+  class n11 Rose
+  class n10 Sky
+  class n13 Sky
+  class n20 Sky
+  class n18 Rose
+  class n14 Ash
+
+```
+
+::: {.notes}
+Speaker notes go here.
+:::
+
+## SPSS specifics
+
+Syntax: Commands can be selected and executed individually
+Functions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run!
+It is best to mark the syntax command as a comment afterwards!
+Use (detailed) Comments („*“ before your text) in the Syntax!
+There must be a period at the end of a command!
+You can use tools like Chat-GBT to create Syntax code ;)
 
 ## Step 1: Data Preparation (SPSS)
 
-- Import your dataset (e.g., CSV, Excel,sav)
-- Label your variables (Variable View)
-- Set correct **measurement levels**
-- Recode or compute variables as needed
+-   Import your dataset (e.g., CSV, Excel, sav)
+-   Label your variables (Variable View)
+-   Set correct **measurement levels**
+-   Recode or compute variables as needed
 
-<br>
-📌 Check for missing data!
+<br> 📌 Check for missing data!
 
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Step 2: Basic Analyses (SPSS)
 
-- Descriptive statistics: `Analyze > Descriptive Statistics`
-- Correlations: `Analyze > Correlate > Bivariate`
-- T-tests & ANOVAs: `Analyze > Compare Means`
-- Regression: `Analyze > Regression > Linear`
+-   Descriptive statistics: `Analyze > Descriptive Statistics`
+-   Correlations: `Analyze > Correlate > Bivariate`
+-   T-tests & ANOVAs: `Analyze > Compare Means`
+-   Regression: `Analyze > Regression > Linear`
 
 📝 Tip: Use "Paste" to see syntax!
 
-
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Example: SPSS Output
 
-- Describe what's shown in a screenshot:
-  - Table with means
-  - Significance values
-  - APA-style report
+-   Describe what's shown in a screenshot:
+    -   Table with means
+    -   Significance values
+    -   APA-style report
 
 📸 *(Add image with `{.stretch}` or similar if using Reveal.js)*
 
-
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Bonus: Jamovi & R
 
-**Jamovi**
-- Based on R, but with a GUI
-- Great for fast and clean outputs
+**Jamovi** - Based on R, but with a GUI - Great for fast and clean outputs
 
-**R**
-- RStudio + tidyverse for flexible analysis
-- Requires coding, but great for reproducibility
+**R** - RStudio + tidyverse for flexible analysis - Requires coding, but great for reproducibility
 
 ➡️ See our [R Guide](https://saiko-psych.github.io/r-guide/)
 
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Reporting Your Results
 
-- Follow APA guidelines
-- Report:
-  - Test type
-  - Test statistic (e.g., *t*, *F*, *r*)
-  - p-values and effect sizes
-  - Graphs when useful
+-   Follow APA guidelines
+-   Report:
+    -   Test type
+    -   Test statistic (e.g., *t*, *F*, *r*)
+    -   p-values and effect sizes
+    -   Graphs when useful
 
-✅ Example:
-> "A significant correlation was found between X and Y, *r* = .45, *p* < .01."
+✅ Example: \> "A significant correlation was found between X and Y, *r* = .45, *p* \< .01."
 
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Resources & Support
 
-- [Saiko Psychology R Guide](https://saiko-psych.github.io/r-guide/)
-- SPSS video tutorials
-- Jamovi.org documentation
-- Ask your instructor or TA
+-   [Saiko Psychology R Guide](https://saiko-psych.github.io/r-guide/)
+-   SPSS video tutorials
+-   discovR
+-   R-Studio video tutorials
+-   Jamovi.org documentation
+-   Ask your instructor or TA
+-   AI Tools
 
 🧠 Practice = confidence!
 
-
+::: {.notes}
+Speaker notes go here.
+:::
 
 ## Let's Practice!
 
-- Open SPSS and import `example_data.csv`
-- Identify variable types
-- Run a descriptive analysis
-- Try a correlation or t-test
+-   Open SPSS and import `example_data.csv`
+-   Identify variable types
+-   Run a descriptive analysis
+-   Try a correlation or t-test
 
 💬 Ask questions as we go!
+
+
+::: {.notes}
+Speaker notes go here.
+:::
