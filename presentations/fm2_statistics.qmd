@@ -105,22 +105,87 @@ Do not buy it! You can almost always get to a PC on Campus -> or better, use Ope
 
 ## SPSS GUI - Screens
 
+![](img/spss_logo.png){.absolute top="-20" left="550" width="70" height="70"}
 
+::: columns
+::: {.column width="40%" .small-text}
+- **SPSS data files** have the extension `.sav`
 
-
-
-SPSS data files have the extension .sav
-Data View & Variable View
-  - When you open SPSS you are in the `Data View`
+    - `Data View` & `Variable View`
+      When you open SPSS you are in the `Data View`
  
 
+- **SPSS-Syntax** have the extension `.sps`
 
-SPSS-Syntax have the extension .sps
-programmable command language
-Automatisierung, Reproduktion & Dokumentation von Analyseschritten
+  - programmable command language
+    Automation, reproducibility
+    
 
-SPSS-Outputs have the extension .spv
-Result of the analyses & error messages
+- **SPSS-Outputs** have the extension `.spv`
+
+  - Result of the analyses & error messages
+:::
+
+::: {.column width="60%"}
+![](img/spss_screen1.png)
+![](img/spss_screen2.png){width="160" height="50"}
+<br>
+
+![](img/spss_screen3.png)
+
+<br>
+![](img/spss_screen4.png)
+:::
+
+:::
+
+
+## SPSS **Syntax** specifics
+
+![](img/spss_logo.png){.absolute top="-20" left="650" width="70" height="70"}
+
+
+:::{.small-text}
+- Commands can be selected and executed individually
+- Functions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run (if you run the whole syntax)!
+:::
+
+::: {.callout-tip}
+It is best to mark the syntax command as a comment afterwards!
+
+Use (detailed) **Comments** („*“ before your text) in the Syntax!
+There must be a period at the end of a command!
+
+You can use AI-tools to create Syntax code ;)
+always use the `PASTE` function -> and save your syntax!
+:::
+
+## SPSS tips
+
+![](img/spss_logo.png){.absolute top="-10" left="300" width="70" height="70"}
+
+**ALWAYS use the “PASTE” command instead of “OK”** to document each step in the syntax.
+
+ - you can edit and/or copy any command in the syntax
+ - easy reproducable analysis
+
+![](img/use_paste.png)
+
+<div class="floating-box" style="width: 150px; height: 75px; top: 400px; left: 170px;"></div>
+
+
+
+Use the “OK” button instead of “PASTE”,
+     only if you are working with the PROCESS macro
+     
+    
+::: {.notes}
+Even if you prefer the graphical user interface to working with the syntax.
+
+also you can turn on in the options that you get the commands in the output also
+:::
+
+
 
 
 ## Access to jamovi
@@ -297,61 +362,432 @@ flowchart TD
 Speaker notes go here.
 :::
 
-## SPSS specifics
+## Quick Overview in Scales
 
-Syntax: Commands can be selected and executed individually
-Functions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run!
-It is best to mark the syntax command as a comment afterwards!
-Use (detailed) Comments („*“ before your text) in the Syntax!
-There must be a period at the end of a command!
-You can use tools like Chat-GBT to create Syntax code ;)
+- **Nominal**: Categories with no order.
+- **Ordinal**: Categories with a defined order.
+- **Interval**: Equal distances but no true zero.
+- **Ratio**: Equal distances and a true zero.
 
-## Step 1: Data Preparation (SPSS)
+<br>
+Properly understanding the type of data scale helps with choosing the right **statistical methods**.
 
--   Import your dataset (e.g., CSV, Excel, sav)
--   Label your variables (Variable View)
--   Set correct **measurement levels**
--   Recode or compute variables as needed
+## The right scaling {.scrollable}
 
-<br> 📌 Check for missing data!
+<br> 
+**Nominal Scale**
+
+- **Categories with no order**.
+- Examples: Gender, Country, Eye Color.
+
+**Ordinal Scale**
+
+- **Categories with a defined order**.
+- Differences between categories are **not uniform**.
+- Examples: Ranking (1st, 2nd, 3rd), Likert scale (Agree, Neutral, Disagree).
+
+ **Interval Scale**
+ 
+- **Ordered data with equal intervals**, but no absolute zero.
+- Examples: Temperature (Celsius, Fahrenheit), IQ Scores.
+
+**Ratio Scale**
+
+- **Ordered data with equal intervals** and an **absolute zero**.
+- Examples: Height, Weight, Age, Income.
+
+
+## Assigning Scales in your Software
+
+<br>
+
+**every variable is automatically assigned to a scale** which the software think is fitting **based on the values of the variable** 
+
+certail analysis need variables with certain scales
+
+  - manually rescale needed varibales
+  
+![](img/scale_types.png){.absolute left="450"}
+
+:::{.notes}
+In the analysis softwaresyou can only choose between Nominal, Ordinal or Continuuous -> you have to choose right -> most alnalysis only let you do the analysis if the variables have the right scale!
+
+in all software tools **every variable is automatically assigned to a scale** which the software think is fitting **based on the values** -> many false scales (especially if you choose poor values in your survey)
+
+but certail analysis need variables with certain scales! 
+:::
+
+## Creating new Variables {.scrollable}
+
+::: panel-tabset
+### info
+
+#### Is needed for e.g.:
+
+- total scores (questionnaires)
+- Means (questionnaires, reaction times)
+- difference value (reaction times)
+
+### GUI
+
+![](img/new_variables_spss2.png){.absolute top="200" left="30" width="300"}
+![](img/new_variables_spss1.png){.absolute top="200" left="400" width="600"}
+
+<div class="floating-box" style="width: 120px; height: 20px; top: 235px; left: 27px;"></div>
+### SPSS Syntax
+
+```SPSS
+* create a total score
+Compute random_sum=random1 + random2.
+EXECUTE.
+
+* create a mean score
+Compute random_mean=(random1 + random2)/2.
+EXECUTE.
+
+* create a difference score
+Compute random_diff=random1 - random2.
+EXECUTE.
+
+```
+### SPSS tip
+
+In the case of (e.g.) sum scores from a large number of variables, it is not necessary to enumerate all variables individually. The “`to`” command is used for this:
+
+Instead:
+
+
+```SPSS
+
+x_sum=var1 + var2 + …
+
+--> 
+
+x_sum=var1 to varN
+
+
+```
+
+
+In this case, however, the variables `var1` to `varN` must follow each other directly in the variable view!
+
+:::
+
+
+
+
+
+## Recoding existing variabels {.scrollable}
+
+
+
+
+::: panel-tabset
+### info
+
+- remember to **ALWAYS create new variables**, never change existing ones
+
+#### Is needed for e.g.:
+
+- Simplification of categorys
+- Inversion of scales
+- Creation of dummy variables
+- Error corrections
+- Mediansplit
+
+
+### GUI
+
+![](img/new_variables_spss2.png){.absolute top="200" left="30" width="300"}
+![](img/recode_variable_spss1.png){.absolute top="200" left="380" width="400"}
+![](img/recode_variable_spss2.png){.absolute top="400" left="700" width="400"}
+
+<div class="floating-box" style="width: 190px; height: 20px; top: 353px; left: 27px;"></div>
+
+
+
+
+
+### SPSS Syntax
+
+```SPSS
+
+* simplification of categorys
+RECODE alte_variable (1 THRU 3 = 1) (4 THRU 7 = 2) (8 THRU 10 = 3) INTO neue_variable.
+EXECUTE.
+
+* inversion of scales
+RECODE alte_variable (1 = 6) (2 = 5) (3 = 4) (4 = 3) (5 = 2) (6 = 1) INTO neue_variable.
+EXECUTE.
+
+
+```
+### SPSS tip
+
+The rules for recoding can also be entered via the graphical user interface instead of the syntax!
+Click on *Change* to add the newly defined variable as an output variable
+
+
+:::
+
+## Reliability Analysis {.scrollable}
+
+::: {.small-text}
+To assess the reliability (measurement accuracy, dependability, stability) of tests and measurements
+
+
+Reliability values can be considered as the proportion of the true variance to the total variance of the test.
+
+<br>
+
+### Cronbachs Alpha (α)
+
+<br>
+
+Dependent on: 
+
+-   1. number of items
+-   2. variance of the items
+-   3. variance of the test scores
+-   4. Covariance/intercorrelation of the items
+  
+  
+α = Sample-dependent | the more items the higher α 
+
+
+It is a generalization of the split-half method (where each item is considered as an independent test part)
+
+<br> 
+
+#### A high α Is desirable for homogeneous constructs/tests 
+
+  - .7 (Heterogeneous constructs, personality tests) 
+  
+  - .8 - .9 (Homogeneous constructs)
+  
+  - over .9 (Performance tests)
+ 
+  
+**CAUTION:** The frequently cited Kuder-Richardson formula (KR20) for dichotomous items is not explicitly provided in SPSS, but an adequate approximation can be calculated using Cronbach's alpha.
+
+<br> 
+
+### Alternative: McDonalds Omega (ω)
+
+Less strict assumptions (identical unstandardized loadings and error variances; essential τ-equivalence)
+
+Recommended when the items correlate with the latent construct to varying degrees.
+Integrated since version 27 in SPSS! -> you can use it :)
+
+:::
+
+
+## Reliability Analysis {.scrollable}
+
+::: panel-tabset
+
+
+
+### SPSS GUI
+
+![](img/reliability_spss1.png){.absolute top="200" left="30" width="200"}
+![](img/reliability_spss2.png){.absolute top="513" left="230" width="200"}
+
+![](img/reliability_spss3.png){.absolute top="200" left="430" width="400"}
+![](img/reliability_spss4.png){.absolute top="200" left="830" width="200"}
+
+<div class="floating-box" style="width: 190px; height: 20px; top: 517px; left: 27px;"></div>
+
+<div class="floating-box" style="width: 190px; height: 20px; top: 530px; left: 227px;"></div>
+
+<div class="floating-box" style="width: 60px; height: 13px; top: 500px; left: 460px;"></div>
+
+<div class="floating-box" style="width: 190px; height: 100px; top: 230px; left: 825px;"></div>
+
+
+
+### SPSS Syntax 
+
+
+Exemplary syntax command
+
+```SPSS
+
+RELIABILITY
+  /VARIABLES=TSC1 TSC2r TSC3r TSC4r TSC5r TSC6 TSC7r TSC8 TSC9r TSC10r TSC11 TSC12r TSC13r
+  /SCALE('ALL VARIABLES') ALL
+  /MODEL=ALPHA
+  /STATISTICS=DESCRIPTIVE SCALE CORR COV
+  /SUMMARY=TOTAL CORR.
+
+
+```
+### SPSS tip
+
+Items of a scale are dragged into the right field (be careful with reverse-coded items → use them accordingly!)
+
+Click on the framed statistics
+
+Copy the command into the syntax and execute it
+
+### SPSS output
+
+![](img/reliability_spss6.png){.absolute top="500" left="230" width="800"}
+
+![](img/reliability_spss5.png){.absolute top="200" left="30" width="300"}
+![](img/reliability_spss7.png){.absolute top="700" left="30" width="600"}
+
+<div class="floating-box" style="width: 110px; height: 89px; top: 450px; left: 27px;"></div>
+
+<div class="textbox" style="top: 200px; left: 340px;">
+**Cronbachs Alpha Based on Standardized items** uses correlations instead of covariances. This can be used, for example, when the items of a test are measured in different units.
+
+
+
+**Inter-Item Correlations**
+
+The mean of the correlations between all item pairs within the measurement instrument. Very high inter-item correlations may indicate redundant items.
+.15 - .50 is acceptable</div>
+
+
+
+
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 335px;"></div>
+
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 535px;"></div>
+
+
+<div class="textbox" style="top: 750px; left: 640px;">
+
+**Corrected Ite-Total Correlation**
+
+= Discriminative power (correlation of an item with the scale, excluding the respective item)
+Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait -> requires discriminative items.
+**>.25 is acceptable; .40 - .70 is good**
+
+
+
+<br>
+
+**Cronbachs alpha if deletes**
+
+= Improvement/deterioration of Cronbach's α by removing the respective item from the scale.
+In the present case, removing individual items would not lead to an improvement in α.
+</div>
+
+
+:::
+
+
+
+
+
+
+
+## t-test 
+
+::: panel-tabset
+
+
+
+### SPSS GUI
+
+![](img/reliability_spss1.png){.absolute top="200" left="30" width="200"}
+![](img/reliability_spss2.png){.absolute top="513" left="230" width="200"}
+
+![](img/reliability_spss3.png){.absolute top="200" left="430" width="400"}
+![](img/reliability_spss4.png){.absolute top="200" left="830" width="200"}
+
+<div class="floating-box" style="width: 190px; height: 20px; top: 517px; left: 27px;"></div>
+
+<div class="floating-box" style="width: 190px; height: 20px; top: 530px; left: 227px;"></div>
+
+<div class="floating-box" style="width: 60px; height: 13px; top: 500px; left: 460px;"></div>
+
+<div class="floating-box" style="width: 190px; height: 100px; top: 230px; left: 825px;"></div>
+
+
+
+### SPSS Syntax 
+
+
+Exemplary syntax command
+
+```SPSS
+
+RELIABILITY
+  /VARIABLES=TSC1 TSC2r TSC3r TSC4r TSC5r TSC6 TSC7r TSC8 TSC9r TSC10r TSC11 TSC12r TSC13r
+  /SCALE('ALL VARIABLES') ALL
+  /MODEL=ALPHA
+  /STATISTICS=DESCRIPTIVE SCALE CORR COV
+  /SUMMARY=TOTAL CORR.
+
+
+```
+### SPSS tip
+
+Items of a scale are dragged into the right field (be careful with reverse-coded items → use them accordingly!)
+
+Click on the framed statistics
+
+Copy the command into the syntax and execute it
+
+### SPSS output
+
+![](img/reliability_spss6.png){.absolute top="500" left="230" width="800"}
+
+![](img/reliability_spss5.png){.absolute top="200" left="30" width="300"}
+![](img/reliability_spss7.png){.absolute top="700" left="30" width="600"}
+
+<div class="floating-box" style="width: 110px; height: 89px; top: 450px; left: 27px;"></div>
+
+<div class="textbox" style="top: 200px; left: 340px;">
+**Cronbachs Alpha Based on Standardized items** uses correlations instead of covariances. This can be used, for example, when the items of a test are measured in different units.
+
+
+
+**Inter-Item Correlations**
+
+The mean of the correlations between all item pairs within the measurement instrument. Very high inter-item correlations may indicate redundant items.
+.15 - .50 is acceptable</div>
+
+
+
+
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 335px;"></div>
+
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 535px;"></div>
+
+
+<div class="textbox" style="top: 750px; left: 640px;">
+
+**Corrected Ite-Total Correlation**
+
+= Discriminative power (correlation of an item with the scale, excluding the respective item)
+Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait -> requires discriminative items.
+**>.25 is acceptable; .40 - .70 is good**
+
+
+
+<br>
+
+**Cronbachs alpha if deletes**
+
+= Improvement/deterioration of Cronbach's α by removing the respective item from the scale.
+In the present case, removing individual items would not lead to an improvement in α.
+</div>
+
+
+:::
+
 
 ::: {.notes}
 Speaker notes go here.
 :::
 
-## Step 2: Basic Analyses (SPSS)
 
--   Descriptive statistics: `Analyze > Descriptive Statistics`
--   Correlations: `Analyze > Correlate > Bivariate`
--   T-tests & ANOVAs: `Analyze > Compare Means`
--   Regression: `Analyze > Regression > Linear`
 
-📝 Tip: Use "Paste" to see syntax!
 
-::: {.notes}
-Speaker notes go here.
-:::
-
-## Example: SPSS Output
-
--   Describe what's shown in a screenshot:
-    -   Table with means
-    -   Significance values
-    -   APA-style report
-
-📸 *(Add image with `{.stretch}` or similar if using Reveal.js)*
-
-::: {.notes}
-Speaker notes go here.
-:::
-
-## Bonus: Jamovi & R
-
-**Jamovi** - Based on R, but with a GUI - Great for fast and clean outputs
-
-**R** - RStudio + tidyverse for flexible analysis - Requires coding, but great for reproducibility
-
-➡️ See our [R Guide](https://saiko-psych.github.io/r-guide/)
 
 ::: {.notes}
 Speaker notes go here.
@@ -366,11 +802,17 @@ Speaker notes go here.
     -   p-values and effect sizes
     -   Graphs when useful
 
-✅ Example: \> "A significant correlation was found between X and Y, *r* = .45, *p* \< .01."
+✅ Example: \> "A significant pearson correlation was found between X and Y, *r* = .45, *p* \< .001"
+
 
 ::: {.notes}
 Speaker notes go here.
 :::
+
+## ANOVA Assumptions
+
+![](img/anova_assumptions.png){.absolute top="" left="" width="1000"}
+
 
 ## Resources & Support
 
@@ -387,6 +829,8 @@ Speaker notes go here.
 ::: {.notes}
 Speaker notes go here.
 :::
+
+
 
 ## Let's Practice!
 
