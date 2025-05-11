@@ -91,7 +91,7 @@ Speaker notes go here.
 
 2. Buy it (you can get it very cheap for one year while you study)
 
-3. Remote Desktop Access (very very slow -> use only in emergancy!)
+3. Remote Desktop Access (very very slow ➜ use only in emergancy!)
 
 ::: footer
 Software for Students [click here](https://it.uni-graz.at/de/it-services/arbeiten/software-fuer-studierende/
@@ -99,7 +99,7 @@ Software for Students [click here](https://it.uni-graz.at/de/it-services/arbeite
 :::
 
 ::: {.notes}
-Do not buy it! You can almost always get to a PC on Campus -> or better, use Open Source!
+Do not buy it! You can almost always get to a PC on Campus ➜ or better, use Open Source!
 :::
 
 
@@ -157,7 +157,7 @@ Use (detailed) **Comments** („*“ before your text) in the Syntax!
 There must be a period at the end of a command!
 
 You can use AI-tools to create Syntax code ;)
-always use the `PASTE` function -> and save your syntax!
+always use the `PASTE` function ➜ and save your syntax!
 :::
 
 ## SPSS tips
@@ -243,14 +243,14 @@ You need to install R first and the R-Studio!
 
     -   choose right installation (e.g. Windows, Mac, linux)
     -   download and install
-    -   setup -> and only use R-Studio -> never R 
+    -   setup ➜ and only use R-Studio ➜ never R 
 
 ::: footer
 help with [R-Studio forum](https://forum.posit.co/)
 :::
 
 ::: {.notes}
-The sooner you start with R-Studio the better for yourself -> it is such a powerfull tool
+The sooner you start with R-Studio the better for yourself ➜ it is such a powerfull tool
 :::
 
 
@@ -410,9 +410,9 @@ certail analysis need variables with certain scales
 ![](img/scale_types.png){.absolute left="450"}
 
 :::{.notes}
-In the analysis softwaresyou can only choose between Nominal, Ordinal or Continuuous -> you have to choose right -> most alnalysis only let you do the analysis if the variables have the right scale!
+In the analysis softwaresyou can only choose between Nominal, Ordinal or Continuuous ➜ you have to choose right ➜ most alnalysis only let you do the analysis if the variables have the right scale!
 
-in all software tools **every variable is automatically assigned to a scale** which the software think is fitting **based on the values** -> many false scales (especially if you choose poor values in your survey)
+in all software tools **every variable is automatically assigned to a scale** which the software think is fitting **based on the values** ➜ many false scales (especially if you choose poor values in your survey)
 
 but certail analysis need variables with certain scales! 
 :::
@@ -461,7 +461,7 @@ Instead:
 
 x_sum=var1 + var2 + …
 
---> 
+-➜ 
 
 x_sum=var1 to varN
 
@@ -577,7 +577,7 @@ It is a generalization of the split-half method (where each item is considered a
 Less strict assumptions (identical unstandardized loadings and error variances; essential τ-equivalence)
 
 Recommended when the items correlate with the latent construct to varying degrees.
-Integrated since version 27 in SPSS! -> you can use it :)
+Integrated since version 27 in SPSS! ➜ you can use it :)
 
 :::
 
@@ -662,7 +662,7 @@ The mean of the correlations between all item pairs within the measurement instr
 **Corrected Ite-Total Correlation**
 
 = Discriminative power (correlation of an item with the scale, excluding the respective item)
-Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait -> requires discriminative items.
+Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait ➜ requires discriminative items.
 **>.25 is acceptable; .40 - .70 is good**
 
 
@@ -684,11 +684,9 @@ In the present case, removing individual items would not lead to an improvement 
 
 
 
-## t-test 
+## t-test {.scrollable}
 
 ::: panel-tabset
-
-
 
 ### SPSS GUI
 
@@ -764,7 +762,7 @@ The mean of the correlations between all item pairs within the measurement instr
 **Corrected Ite-Total Correlation**
 
 = Discriminative power (correlation of an item with the scale, excluding the respective item)
-Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait -> requires discriminative items.
+Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait ➜ requires discriminative items.
 **>.25 is acceptable; .40 - .70 is good**
 
 
@@ -793,6 +791,211 @@ Speaker notes go here.
 Speaker notes go here.
 :::
 
+## ANOVA Assumptions
+
+![](img/anova_assumptions.png){.absolute top="" left="" width="1000"}
+
+## ANOVA - Effect Sizes $\hat{\eta}^2 \, \, \hat{\eta}^2_p$ {.scrollable}
+
+::: columns
+::: {.column width="60%"}
+:::{.small-text}
+→ Both are measures of effect size within the context of analysis of variance
+
+**η2** : Proportion of the total variance explained by the factor
+
+  - How much of the variance in the dependent variable can be attributed to the individual factor?
+  - Contra: Comparison of effect size with other analyses is not possible, as the effect size depends on which other effects are being tested in the analysis.
+
+<br>
+**η2p:** All components except the variance of interest and the error variance are removed from the total variance (in the denominator)
+
+  - What is the proportion of the dependent variable's variance attributed to the individual factor and the error that can be explained by each respective factor?
+  - Pro: Comparable across different studies 
+(small) 
+  - Contra: Partial effect size measures within a study cannot be summed to a total effect → Representation of the relationships between the effects within the analysis is not possible
+:::
+:::
+
+::: {.column width="40%"} 
+
+:::{.small-text}
+
+<br><br>
+
+$\hat{\eta}^2 = \frac{QS_{\text{Factor}}}{QS_{\text{Total}}}$
+
+<br><br><br><br><br><br><br><br><br><br>
+
+$\hat{\eta}^2_p = \frac{QS_{\text{Factor}}}{QS_{\text{Factor}} + QS_{\text{Error}}}$
+:::
+
+:::
+:::
+## PROCESS Macro 
+
+
+  - ### installation 
+
+  - ### use for moderation- & mediation analysis
+  
+  
+## PROCESS installation {.scrollable}
+
+<br>
+
+**PROCESS** is a macro for SPSS developed by Andrew F. Hayes specifically designed for the analysis of mediated, moderated and conditional process models.
+
+It simplifies the application of regression analyses, especially for more complex models that examine interaction effects or indirect mediation effects.
+
+<br> 
+**Integration in SPSS **
+
+   1. [https://processmacro.org/download.html](https://processmacro.org/download.html)
+
+   2. [https://haskayne.ucalgary.ca/CCRAM/resource-hub](https://haskayne.ucalgary.ca/CCRAM/resource-hub)
+
+    “Backup download link” should automatically download the desired .zip folder.
+
+    Alternatively, you can take the detour via the website of the Canadian Centre for Research Analysis and Methods (step 2)
+
+  3. Unzip the .zip-folder & start „process.sps“-(Syntax-) file
+
+  4. In the open SPSS-Syntax:  `  Extensions ➜ Utilities ➜ Install custom Dialog (Compatibility Mode) `
+  
+  5. Select the folder, in witch the file „process.spd“ is safed  + open it
+  
+  6. You can select the macro under `Analyze ➜ Regression`
+
+
+
+
+## Moderation concept {.scrollable}
+
+![](img/mod_1.png){.absolute top="" left="" width=""}
+![](img/mod_2.png){.absolute top="600" left="" width=""}
+
+
+
+
+![](img/mod_3.png){.absolute top="1250" left="" width=""}
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+### Interpretation of (unstandardized) regression-weights if a moderation effect exists
+
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+## Moderation analysis with Process
+
+![](img/process_mod_1.png){.absolute top="70" left="" width=""}
+
+
+## PROCESS - Output {.scrollable}
+
+::: panel-tabset
+
+### info 
+
+![](img/process_mod_4.png){.absolute top="200" left="" width=""}
+
+### Output
+
+![](img/process_mod_2.png){.absolute top="200" left="" width=""}
+### 
+
+### JND
+
+![](img/process_mod_3.png){.absolute top="200" left="" width=""}
+
+
+### PROCESS Interaction Diagram
+
+![](img/process_mod_5.png){.absolute top="200" left="" width=""}
+
+:::
+
+## PROCESS Limitations {.scrollable}
+
+::: {.small-text}
+
+In this example, a dichotomous IV and a metric moderator variable (and their interaction term) were included in the regression model.
+
+  - If you use a dichotomous moderator, there is no need to output the Johnson & Neyman significance regions
+  - The use of a categorical variable (as IV or moderator ➜ dummy coding) is not explicitly considered here. Instructions can be found on the Internet.
+
+
+PROCESS CANNOT be used to  Therefore, the interaction term IV * moderator must first be  created in SPSS in the form of a new variable
+
+  - `Transform ➜ Compute variable`
+
+  - This variable is then entered into the regression together with IV and moderator in the regression
+
+:::
+
+## Interpretation of Moderation Analysis {.scrollable}
+
+![](img/process_mod_int1.png){.absolute top="70" left="" width=""}
+![](img/process_mod_int2.png){.absolute top="570" left="" width=""}
+
+## Estimation and interpretation of the parameters of centered predictors
+
+![](img/process_mod_int3.png){.absolute top="170" left="" width=""}
+
+## Example – simple Moderation
+
+![](img/process_mod_int4.png){.absolute top="70" left="" width=""}
+
+
+
+
+
+## Mediation concept
+
+![](img/med_1.png){.absolute top="70" left="" width=""}
+
+## Mediation PROCESS {.scrollable}
+
+![](img/process_med_1.png){.absolute top="50" left="" width=""}
+
+![](img/process_med_2.png){.absolute top="500" left="0" width=""}
+![](img/process_med_3.png){.absolute top="950" left="" width=""}
+
+
+## Mediation - presenting results
+
+No general standards available
+
+**Recomendations: **
+Graphical representation + reporting results in the text or APA-table for MLR
+Path coefficients (a, b, a*b, c‘) ➜ (un)standardized, SE, bootstrapping confidence interval
+
+<br>
+
+**Effect size: **
+Dichotomous predictor → partially standardized effect (unstd. a*b / SDY)
+Continuous predictor → fully standardized effect (unstd. a*b / SDY  / SDX )
+
+Further guidelines for result presentation can be found online
+e.g. [http://www.regorz-statistik.de/inhalte](http://www.regorz-statistik.de/inhalte/tutorial_mediator_bootstrapping_process.html#:~:text=Beim%20partiell%20standardisierten%20Effekt%20wird,an%20der%20abh%C3%A4ngigen%20Variable%20standardisiert).
+
+## Mediation with categorical predictors
+
+A detailed description can be found, for example, in A. Field (2018).
+Please feel free to reach out by email if you have any questions regarding your analysis!
+
+Key points to remember:
+A categorical variable is dummy-coded
+One group serves as the reference/baseline for all other groups → 0-coding
+
+
+
+Video-tutorial: [https://www.youtube.com/watch?v=r2_zw4G55X0](https://www.youtube.com/watch?v=r2_zw4G55X0)
+
+
+
+
+
 ## Reporting Your Results
 
 -   Follow APA guidelines
@@ -809,9 +1012,7 @@ Speaker notes go here.
 Speaker notes go here.
 :::
 
-## ANOVA Assumptions
 
-![](img/anova_assumptions.png){.absolute top="" left="" width="1000"}
 
 
 ## Resources & Support
