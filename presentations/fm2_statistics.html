@@ -29,6 +29,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
   <link rel="stylesheet" href="styles.css">
@@ -468,13 +533,13 @@
 <ol type="1">
 <li><p>Use a PC at the University (e.g.&nbsp;PC-Room at the institut)</p></li>
 <li><p>Buy it (you can get it very cheap for one year while you study)</p></li>
-<li><p>Remote Desktop Access (very very slow -&gt; use only in emergancy!)</p></li>
+<li><p>Remote Desktop Access (very very slow ➜ use only in emergancy!)</p></li>
 </ol>
 <div class="footer">
 <p>Software for Students <a href="https://it.uni-graz.at/de/it-services/arbeiten/software-fuer-studierende/">click here</a></p>
 </div>
 <aside class="notes">
-<p>Do not buy it! You can almost always get to a PC on Campus -&gt; or better, use Open Source!</p>
+<p>Do not buy it! You can almost always get to a PC on Campus ➜ or better, use Open Source!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -489,9 +554,81 @@
 </section>
 <section id="spss-gui---screens" class="slide level2">
 <h2>SPSS GUI - Screens</h2>
-<p>SPSS data files have the extension .sav Data View &amp; Variable View - When you open SPSS you are in the <code>Data View</code></p>
-<p>SPSS-Syntax have the extension .sps programmable command language Automatisierung, Reproduktion &amp; Dokumentation von Analyseschritten</p>
-<p>SPSS-Outputs have the extension .spv Result of the analyses &amp; error messages</p>
+<p><img data-src="img/spss_logo.png" class="absolute" style="top: -20px; left: 550px; width: 70px; height: 70px; "></p>
+<div class="columns">
+<div class="column small-text" style="width:40%;">
+<ul>
+<li><p><strong>SPSS data files</strong> have the extension <code>.sav</code></p>
+<ul>
+<li><code>Data View</code> &amp; <code>Variable View</code> When you open SPSS you are in the <code>Data View</code></li>
+</ul></li>
+<li><p><strong>SPSS-Syntax</strong> have the extension <code>.sps</code></p>
+<ul>
+<li>programmable command language Automation, reproducibility</li>
+</ul></li>
+<li><p><strong>SPSS-Outputs</strong> have the extension <code>.spv</code></p>
+<ul>
+<li>Result of the analyses &amp; error messages</li>
+</ul></li>
+</ul>
+</div><div class="column" style="width:60%;">
+<p><img data-src="img/spss_screen1.png"> <img data-src="img/spss_screen2.png" width="160" height="50"> <br></p>
+<p><img data-src="img/spss_screen3.png"></p>
+<p><br> <img data-src="img/spss_screen4.png"></p>
+</div></div>
+</section>
+<section id="spss-syntax-specifics" class="slide level2">
+<h2>SPSS <strong>Syntax</strong> specifics</h2>
+<p><img data-src="img/spss_logo.png" class="absolute" style="top: -20px; left: 650px; width: 70px; height: 70px; "></p>
+<div class="small-text">
+<ul>
+<li>Commands can be selected and executed individually</li>
+<li>Functions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run (if you run the whole syntax)!</li>
+</ul>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Tip</strong></p>
+</div>
+<div class="callout-content">
+<p>It is best to mark the syntax command as a comment afterwards!</p>
+<p>Use (detailed) <strong>Comments</strong> („*“ before your text) in the Syntax! There must be a period at the end of a command!</p>
+<p>You can use AI-tools to create Syntax code ;) always use the <code>PASTE</code> function ➜ and save your syntax!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="spss-tips" class="slide level2">
+<h2>SPSS tips</h2>
+<p><img data-src="img/spss_logo.png" class="absolute" style="top: -10px; left: 300px; width: 70px; height: 70px; "></p>
+<p><strong>ALWAYS use the “PASTE” command instead of “OK”</strong> to document each step in the syntax.</p>
+<ul>
+<li>you can edit and/or copy any command in the syntax</li>
+<li>easy reproducable analysis</li>
+</ul>
+<p><img data-src="img/use_paste.png"></p>
+<div class="floating-box" style="width: 150px; height: 75px; top: 400px; left: 170px;">
+
+</div>
+<p>Use the “OK” button instead of “PASTE”, only if you are working with the PROCESS macro</p>
+<aside class="notes">
+<p>Even if you prefer the graphical user interface to working with the syntax.</p>
+<p>also you can turn on in the options that you get the commands in the output also</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
 <section id="access-to-jamovi" class="slide level2">
 <h2>Access to jamovi</h2>
@@ -560,14 +697,14 @@
 <ul>
 <li>choose right installation (e.g.&nbsp;Windows, Mac, linux)</li>
 <li>download and install</li>
-<li>setup -&gt; and only use R-Studio -&gt; never R</li>
+<li>setup ➜ and only use R-Studio ➜ never R</li>
 </ul></li>
 </ol>
 <div class="footer">
 <p>help with <a href="https://forum.posit.co/">R-Studio forum</a></p>
 </div>
 <aside class="notes">
-<p>The sooner you start with R-Studio the better for yourself -&gt; it is such a powerfull tool</p>
+<p>The sooner you start with R-Studio the better for yourself ➜ it is such a powerfull tool</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -700,67 +837,334 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="spss-specifics" class="slide level2">
-<h2>SPSS specifics</h2>
-<p>Syntax: Commands can be selected and executed individually Functions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run! It is best to mark the syntax command as a comment afterwards! Use (detailed) Comments („*“ before your text) in the Syntax! There must be a period at the end of a command! You can use tools like Chat-GBT to create Syntax code ;)</p>
-</section>
-<section id="step-1-data-preparation-spss" class="slide level2">
-<h2>Step 1: Data Preparation (SPSS)</h2>
+<section id="quick-overview-in-scales" class="slide level2">
+<h2>Quick Overview in Scales</h2>
 <ul>
-<li>Import your dataset (e.g., CSV, Excel, sav)</li>
-<li>Label your variables (Variable View)</li>
-<li>Set correct <strong>measurement levels</strong></li>
-<li>Recode or compute variables as needed</li>
+<li><strong>Nominal</strong>: Categories with no order.</li>
+<li><strong>Ordinal</strong>: Categories with a defined order.</li>
+<li><strong>Interval</strong>: Equal distances but no true zero.</li>
+<li><strong>Ratio</strong>: Equal distances and a true zero.</li>
 </ul>
-<p><br> 📌 Check for missing data!</p>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<p><br> Properly understanding the type of data scale helps with choosing the right <strong>statistical methods</strong>.</p>
 </section>
-<section id="step-2-basic-analyses-spss" class="slide level2">
-<h2>Step 2: Basic Analyses (SPSS)</h2>
+<section id="the-right-scaling" class="slide level2 scrollable">
+<h2>The right scaling</h2>
+<p><br> <strong>Nominal Scale</strong></p>
 <ul>
-<li>Descriptive statistics: <code>Analyze &gt; Descriptive Statistics</code></li>
-<li>Correlations: <code>Analyze &gt; Correlate &gt; Bivariate</code></li>
-<li>T-tests &amp; ANOVAs: <code>Analyze &gt; Compare Means</code></li>
-<li>Regression: <code>Analyze &gt; Regression &gt; Linear</code></li>
+<li><strong>Categories with no order</strong>.</li>
+<li>Examples: Gender, Country, Eye Color.</li>
 </ul>
-<p>📝 Tip: Use “Paste” to see syntax!</p>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="example-spss-output" class="slide level2">
-<h2>Example: SPSS Output</h2>
+<p><strong>Ordinal Scale</strong></p>
 <ul>
-<li>Describe what’s shown in a screenshot:
-<ul>
-<li>Table with means</li>
-<li>Significance values</li>
-<li>APA-style report</li>
-</ul></li>
+<li><strong>Categories with a defined order</strong>.</li>
+<li>Differences between categories are <strong>not uniform</strong>.</li>
+<li>Examples: Ranking (1st, 2nd, 3rd), Likert scale (Agree, Neutral, Disagree).</li>
 </ul>
-<p>📸 <em>(Add image with <code>{.stretch}</code> or similar if using Reveal.js)</em></p>
+<p><strong>Interval Scale</strong></p>
+<ul>
+<li><strong>Ordered data with equal intervals</strong>, but no absolute zero.</li>
+<li>Examples: Temperature (Celsius, Fahrenheit), IQ Scores.</li>
+</ul>
+<p><strong>Ratio Scale</strong></p>
+<ul>
+<li><strong>Ordered data with equal intervals</strong> and an <strong>absolute zero</strong>.</li>
+<li>Examples: Height, Weight, Age, Income.</li>
+</ul>
+</section>
+<section id="assigning-scales-in-your-software" class="slide level2">
+<h2>Assigning Scales in your Software</h2>
+<p><br></p>
+<p><strong>every variable is automatically assigned to a scale</strong> which the software think is fitting <strong>based on the values of the variable</strong></p>
+<p>certail analysis need variables with certain scales</p>
+<ul>
+<li>manually rescale needed varibales</li>
+</ul>
+<p><img data-src="img/scale_types.png" class="absolute" style="left: 450px; "></p>
+<aside class="notes">
+<p>In the analysis softwaresyou can only choose between Nominal, Ordinal or Continuuous ➜ you have to choose right ➜ most alnalysis only let you do the analysis if the variables have the right scale!</p>
+<p>in all software tools <strong>every variable is automatically assigned to a scale</strong> which the software think is fitting <strong>based on the values</strong> ➜ many false scales (especially if you choose poor values in your survey)</p>
+<p>but certail analysis need variables with certain scales!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="creating-new-variables" class="slide level2 scrollable">
+<h2>Creating new Variables</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">info</a></li><li><a href="#tabset-1-2">GUI</a></li><li><a href="#tabset-1-3">SPSS Syntax</a></li><li><a href="#tabset-1-4">SPSS tip</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<h4 id="is-needed-for-e.g.">Is needed for e.g.:</h4>
+<ul>
+<li>total scores (questionnaires)</li>
+<li>Means (questionnaires, reaction times)</li>
+<li>difference value (reaction times)</li>
+</ul>
+</div>
+<div id="tabset-1-2">
+<p><img data-src="img/new_variables_spss2.png" class="absolute" style="top: 200px; left: 30px; width: 300px; "> <img data-src="img/new_variables_spss1.png" class="absolute" style="top: 200px; left: 400px; width: 600px; "></p>
+<div class="floating-box" style="width: 120px; height: 20px; top: 235px; left: 27px;">
+
+</div>
+</div>
+<div id="tabset-1-3">
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource spss number-lines code-with-copy"><code class="sourceCode"><span id="cb1-1"><a></a>* create a total score</span>
+<span id="cb1-2"><a></a>Compute random_sum=random1 + random2.</span>
+<span id="cb1-3"><a></a>EXECUTE.</span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a>* create a mean score</span>
+<span id="cb1-6"><a></a>Compute random_mean=(random1 + random2)/2.</span>
+<span id="cb1-7"><a></a>EXECUTE.</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a>* create a difference score</span>
+<span id="cb1-10"><a></a>Compute random_diff=random1 - random2.</span>
+<span id="cb1-11"><a></a>EXECUTE.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-1-4">
+<p>In the case of (e.g.) sum scores from a large number of variables, it is not necessary to enumerate all variables individually. The “<code>to</code>” command is used for this:</p>
+<p>Instead:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource spss number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a></span>
+<span id="cb2-2"><a></a>x_sum=var1 + var2 + …</span>
+<span id="cb2-3"><a></a></span>
+<span id="cb2-4"><a></a>-➜ </span>
+<span id="cb2-5"><a></a></span>
+<span id="cb2-6"><a></a>x_sum=var1 to varN</span>
+<span id="cb2-7"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In this case, however, the variables <code>var1</code> to <code>varN</code> must follow each other directly in the variable view!</p>
+</div>
+</div>
+</div>
+</section>
+<section id="recoding-existing-variabels" class="slide level2 scrollable">
+<h2>Recoding existing variabels</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">info</a></li><li><a href="#tabset-2-2">GUI</a></li><li><a href="#tabset-2-3">SPSS Syntax</a></li><li><a href="#tabset-2-4">SPSS tip</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<ul>
+<li>remember to <strong>ALWAYS create new variables</strong>, never change existing ones</li>
+</ul>
+<h4 id="is-needed-for-e.g.-1">Is needed for e.g.:</h4>
+<ul>
+<li>Simplification of categorys</li>
+<li>Inversion of scales</li>
+<li>Creation of dummy variables</li>
+<li>Error corrections</li>
+<li>Mediansplit</li>
+</ul>
+</div>
+<div id="tabset-2-2">
+<p><img data-src="img/new_variables_spss2.png" class="absolute" style="top: 200px; left: 30px; width: 300px; "> <img data-src="img/recode_variable_spss1.png" class="absolute" style="top: 200px; left: 380px; width: 400px; "> <img data-src="img/recode_variable_spss2.png" class="absolute" style="top: 400px; left: 700px; width: 400px; "></p>
+<div class="floating-box" style="width: 190px; height: 20px; top: 353px; left: 27px;">
+
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource spss number-lines code-with-copy"><code class="sourceCode"><span id="cb3-1"><a></a></span>
+<span id="cb3-2"><a></a>* simplification of categorys</span>
+<span id="cb3-3"><a></a>RECODE alte_variable (1 THRU 3 = 1) (4 THRU 7 = 2) (8 THRU 10 = 3) INTO neue_variable.</span>
+<span id="cb3-4"><a></a>EXECUTE.</span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a>* inversion of scales</span>
+<span id="cb3-7"><a></a>RECODE alte_variable (1 = 6) (2 = 5) (3 = 4) (4 = 3) (5 = 2) (6 = 1) INTO neue_variable.</span>
+<span id="cb3-8"><a></a>EXECUTE.</span>
+<span id="cb3-9"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-4">
+<p>The rules for recoding can also be entered via the graphical user interface instead of the syntax! Click on <em>Change</em> to add the newly defined variable as an output variable</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reliability-analysis" class="slide level2 scrollable">
+<h2>Reliability Analysis</h2>
+<div class="small-text">
+<p>To assess the reliability (measurement accuracy, dependability, stability) of tests and measurements</p>
+<p>Reliability values can be considered as the proportion of the true variance to the total variance of the test.</p>
+<p><br></p>
+<h3 id="cronbachs-alpha-α">Cronbachs Alpha (α)</h3>
+<p><br></p>
+<p>Dependent on:</p>
+<ul>
+<li><ol type="1">
+<li>number of items</li>
+</ol></li>
+<li><ol start="2" type="1">
+<li>variance of the items</li>
+</ol></li>
+<li><ol start="3" type="1">
+<li>variance of the test scores</li>
+</ol></li>
+<li><ol start="4" type="1">
+<li>Covariance/intercorrelation of the items</li>
+</ol></li>
+</ul>
+<p>α = Sample-dependent | the more items the higher α</p>
+<p>It is a generalization of the split-half method (where each item is considered as an independent test part)</p>
+<p><br></p>
+<h4 id="a-high-α-is-desirable-for-homogeneous-constructstests">A high α Is desirable for homogeneous constructs/tests</h4>
+<ul>
+<li><p>.7 (Heterogeneous constructs, personality tests)</p></li>
+<li><p>.8 - .9 (Homogeneous constructs)</p></li>
+<li><p>over .9 (Performance tests)</p></li>
+</ul>
+<p><strong>CAUTION:</strong> The frequently cited Kuder-Richardson formula (KR20) for dichotomous items is not explicitly provided in SPSS, but an adequate approximation can be calculated using Cronbach’s alpha.</p>
+<p><br></p>
+<h3 id="alternative-mcdonalds-omega-ω">Alternative: McDonalds Omega (ω)</h3>
+<p>Less strict assumptions (identical unstandardized loadings and error variances; essential τ-equivalence)</p>
+<p>Recommended when the items correlate with the latent construct to varying degrees. Integrated since version 27 in SPSS! ➜ you can use it :)</p>
+</div>
+</section>
+<section id="reliability-analysis-1" class="slide level2 scrollable">
+<h2>Reliability Analysis</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">SPSS GUI</a></li><li><a href="#tabset-3-2">SPSS Syntax</a></li><li><a href="#tabset-3-3">SPSS tip</a></li><li><a href="#tabset-3-4">SPSS output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<p><img data-src="img/reliability_spss1.png" class="absolute" style="top: 200px; left: 30px; width: 200px; "> <img data-src="img/reliability_spss2.png" class="absolute" style="top: 513px; left: 230px; width: 200px; "></p>
+<p><img data-src="img/reliability_spss3.png" class="absolute" style="top: 200px; left: 430px; width: 400px; "> <img data-src="img/reliability_spss4.png" class="absolute" style="top: 200px; left: 830px; width: 200px; "></p>
+<div class="floating-box" style="width: 190px; height: 20px; top: 517px; left: 27px;">
+
+</div>
+<div class="floating-box" style="width: 190px; height: 20px; top: 530px; left: 227px;">
+
+</div>
+<div class="floating-box" style="width: 60px; height: 13px; top: 500px; left: 460px;">
+
+</div>
+<div class="floating-box" style="width: 190px; height: 100px; top: 230px; left: 825px;">
+
+</div>
+</div>
+<div id="tabset-3-2">
+<p>Exemplary syntax command</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource spss number-lines code-with-copy"><code class="sourceCode"><span id="cb4-1"><a></a></span>
+<span id="cb4-2"><a></a>RELIABILITY</span>
+<span id="cb4-3"><a></a>  /VARIABLES=TSC1 TSC2r TSC3r TSC4r TSC5r TSC6 TSC7r TSC8 TSC9r TSC10r TSC11 TSC12r TSC13r</span>
+<span id="cb4-4"><a></a>  /SCALE('ALL VARIABLES') ALL</span>
+<span id="cb4-5"><a></a>  /MODEL=ALPHA</span>
+<span id="cb4-6"><a></a>  /STATISTICS=DESCRIPTIVE SCALE CORR COV</span>
+<span id="cb4-7"><a></a>  /SUMMARY=TOTAL CORR.</span>
+<span id="cb4-8"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-3">
+<p>Items of a scale are dragged into the right field (be careful with reverse-coded items → use them accordingly!)</p>
+<p>Click on the framed statistics</p>
+<p>Copy the command into the syntax and execute it</p>
+</div>
+<div id="tabset-3-4">
+<p><img data-src="img/reliability_spss6.png" class="absolute" style="top: 500px; left: 230px; width: 800px; "></p>
+<p><img data-src="img/reliability_spss5.png" class="absolute" style="top: 200px; left: 30px; width: 300px; "> <img data-src="img/reliability_spss7.png" class="absolute" style="top: 700px; left: 30px; width: 600px; "></p>
+<div class="floating-box" style="width: 110px; height: 89px; top: 450px; left: 27px;">
+
+</div>
+<div class="textbox" style="top: 200px; left: 340px;">
+<p><strong>Cronbachs Alpha Based on Standardized items</strong> uses correlations instead of covariances. This can be used, for example, when the items of a test are measured in different units.</p>
+<p><strong>Inter-Item Correlations</strong></p>
+The mean of the correlations between all item pairs within the measurement instrument. Very high inter-item correlations may indicate redundant items. .15 - .50 is acceptable
+</div>
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 335px;">
+
+</div>
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 535px;">
+
+</div>
+<div class="textbox" style="top: 750px; left: 640px;">
+<p><strong>Corrected Ite-Total Correlation</strong></p>
+<p>= Discriminative power (correlation of an item with the scale, excluding the respective item) Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait ➜ requires discriminative items. <strong>&gt;.25 is acceptable; .40 - .70 is good</strong></p>
+<p><br></p>
+<p><strong>Cronbachs alpha if deletes</strong></p>
+<p>= Improvement/deterioration of Cronbach’s α by removing the respective item from the scale. In the present case, removing individual items would not lead to an improvement in α.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="t-test" class="slide level2 scrollable">
+<h2>t-test</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">SPSS GUI</a></li><li><a href="#tabset-4-2">SPSS Syntax</a></li><li><a href="#tabset-4-3">SPSS tip</a></li><li><a href="#tabset-4-4">SPSS output</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<p><img data-src="img/reliability_spss1.png" class="absolute" style="top: 200px; left: 30px; width: 200px; "> <img data-src="img/reliability_spss2.png" class="absolute" style="top: 513px; left: 230px; width: 200px; "></p>
+<p><img data-src="img/reliability_spss3.png" class="absolute" style="top: 200px; left: 430px; width: 400px; "> <img data-src="img/reliability_spss4.png" class="absolute" style="top: 200px; left: 830px; width: 200px; "></p>
+<div class="floating-box" style="width: 190px; height: 20px; top: 517px; left: 27px;">
+
+</div>
+<div class="floating-box" style="width: 190px; height: 20px; top: 530px; left: 227px;">
+
+</div>
+<div class="floating-box" style="width: 60px; height: 13px; top: 500px; left: 460px;">
+
+</div>
+<div class="floating-box" style="width: 190px; height: 100px; top: 230px; left: 825px;">
+
+</div>
+</div>
+<div id="tabset-4-2">
+<p>Exemplary syntax command</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource spss number-lines code-with-copy"><code class="sourceCode"><span id="cb5-1"><a></a></span>
+<span id="cb5-2"><a></a>RELIABILITY</span>
+<span id="cb5-3"><a></a>  /VARIABLES=TSC1 TSC2r TSC3r TSC4r TSC5r TSC6 TSC7r TSC8 TSC9r TSC10r TSC11 TSC12r TSC13r</span>
+<span id="cb5-4"><a></a>  /SCALE('ALL VARIABLES') ALL</span>
+<span id="cb5-5"><a></a>  /MODEL=ALPHA</span>
+<span id="cb5-6"><a></a>  /STATISTICS=DESCRIPTIVE SCALE CORR COV</span>
+<span id="cb5-7"><a></a>  /SUMMARY=TOTAL CORR.</span>
+<span id="cb5-8"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-4-3">
+<p>Items of a scale are dragged into the right field (be careful with reverse-coded items → use them accordingly!)</p>
+<p>Click on the framed statistics</p>
+<p>Copy the command into the syntax and execute it</p>
+</div>
+<div id="tabset-4-4">
+<p><img data-src="img/reliability_spss6.png" class="absolute" style="top: 500px; left: 230px; width: 800px; "></p>
+<p><img data-src="img/reliability_spss5.png" class="absolute" style="top: 200px; left: 30px; width: 300px; "> <img data-src="img/reliability_spss7.png" class="absolute" style="top: 700px; left: 30px; width: 600px; "></p>
+<div class="floating-box" style="width: 110px; height: 89px; top: 450px; left: 27px;">
+
+</div>
+<div class="textbox" style="top: 200px; left: 340px;">
+<p><strong>Cronbachs Alpha Based on Standardized items</strong> uses correlations instead of covariances. This can be used, for example, when the items of a test are measured in different units.</p>
+<p><strong>Inter-Item Correlations</strong></p>
+The mean of the correlations between all item pairs within the measurement instrument. Very high inter-item correlations may indicate redundant items. .15 - .50 is acceptable
+</div>
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 335px;">
+
+</div>
+<div class="floating-box" style="width: 80px; height: 60px; top: 730px; left: 535px;">
+
+</div>
+<div class="textbox" style="top: 750px; left: 640px;">
+<p><strong>Corrected Ite-Total Correlation</strong></p>
+<p>= Discriminative power (correlation of an item with the scale, excluding the respective item) Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait ➜ requires discriminative items. <strong>&gt;.25 is acceptable; .40 - .70 is good</strong></p>
+<p><br></p>
+<p><strong>Cronbachs alpha if deletes</strong></p>
+<p>= Improvement/deterioration of Cronbach’s α by removing the respective item from the scale. In the present case, removing individual items would not lead to an improvement in α.</p>
+</div>
+</div>
+</div>
+</div>
+<aside class="notes">
+<p>Speaker notes go here.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 <aside class="notes">
 <p>Speaker notes go here.</p>
 <style type="text/css">
@@ -775,24 +1179,144 @@
           display:block!important;
       }</style></aside>
 </section>
-<section id="bonus-jamovi-r" class="slide level2">
-<h2>Bonus: Jamovi &amp; R</h2>
-<p><strong>Jamovi</strong> - Based on R, but with a GUI - Great for fast and clean outputs</p>
-<p><strong>R</strong> - RStudio + tidyverse for flexible analysis - Requires coding, but great for reproducibility</p>
-<p>➡️ See our <a href="https://saiko-psych.github.io/r-guide/">R Guide</a></p>
-<aside class="notes">
-<p>Speaker notes go here.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+<section id="anova-assumptions" class="slide level2">
+<h2>ANOVA Assumptions</h2>
+<p><img data-src="img/anova_assumptions.png" class="absolute" style="top: ; left: ; width: 1000px; "></p>
+</section>
+<section id="anova---effect-sizes-hateta2-hateta2_p" class="slide level2 scrollable">
+<h2>ANOVA - Effect Sizes <span class="math inline">\(\hat{\eta}^2 \, \, \hat{\eta}^2_p\)</span></h2>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="small-text">
+<p>→ Both are measures of effect size within the context of analysis of variance</p>
+<p><strong>η2</strong> : Proportion of the total variance explained by the factor</p>
+<ul>
+<li>How much of the variance in the dependent variable can be attributed to the individual factor?</li>
+<li>Contra: Comparison of effect size with other analyses is not possible, as the effect size depends on which other effects are being tested in the analysis.</li>
+</ul>
+<p><br> <strong>η2p:</strong> All components except the variance of interest and the error variance are removed from the total variance (in the denominator)</p>
+<ul>
+<li>What is the proportion of the dependent variable’s variance attributed to the individual factor and the error that can be explained by each respective factor?</li>
+<li>Pro: Comparable across different studies (small)</li>
+<li>Contra: Partial effect size measures within a study cannot be summed to a total effect → Representation of the relationships between the effects within the analysis is not possible</li>
+</ul>
+</div>
+</div><div class="column" style="width:40%;">
+<div class="small-text">
+<p><br><br></p>
+<p><span class="math inline">\(\hat{\eta}^2 = \frac{QS_{\text{Factor}}}{QS_{\text{Total}}}\)</span></p>
+<p><br><br><br><br><br><br><br><br><br><br></p>
+<p><span class="math inline">\(\hat{\eta}^2_p = \frac{QS_{\text{Factor}}}{QS_{\text{Factor}} + QS_{\text{Error}}}\)</span></p>
+</div>
+</div></div>
+</section>
+<section id="process-macro" class="slide level2">
+<h2>PROCESS Macro</h2>
+<ul>
+<li><h3 id="installation">installation</h3></li>
+<li><h3 id="use-for-moderation--mediation-analysis">use for moderation- &amp; mediation analysis</h3></li>
+</ul>
+</section>
+<section id="process-installation" class="slide level2 scrollable">
+<h2>PROCESS installation</h2>
+<p><br></p>
+<p><strong>PROCESS</strong> is a macro for SPSS developed by Andrew F. Hayes specifically designed for the analysis of mediated, moderated and conditional process models.</p>
+<p>It simplifies the application of regression analyses, especially for more complex models that examine interaction effects or indirect mediation effects.</p>
+<p><br> <strong>Integration in SPSS </strong></p>
+<ol type="1">
+<li><p><a href="https://processmacro.org/download.html">https://processmacro.org/download.html</a></p></li>
+<li><p><a href="https://haskayne.ucalgary.ca/CCRAM/resource-hub">https://haskayne.ucalgary.ca/CCRAM/resource-hub</a></p></li>
+</ol>
+<pre><code>“Backup download link” should automatically download the desired .zip folder.
+
+Alternatively, you can take the detour via the website of the Canadian Centre for Research Analysis and Methods (step 2)</code></pre>
+<ol start="3" type="1">
+<li><p>Unzip the .zip-folder &amp; start „process.sps“-(Syntax-) file</p></li>
+<li><p>In the open SPSS-Syntax: <code>Extensions ➜ Utilities ➜ Install custom Dialog (Compatibility Mode)</code></p></li>
+<li><p>Select the folder, in witch the file „process.spd“ is safed + open it</p></li>
+<li><p>You can select the macro under <code>Analyze ➜ Regression</code></p></li>
+</ol>
+</section>
+<section id="moderation-concept" class="slide level2 scrollable">
+<h2>Moderation concept</h2>
+<p><img data-src="img/mod_1.png" class="absolute" style="top: ; left: ; width: ; "> <img data-src="img/mod_2.png" class="absolute" style="top: 600px; left: ; width: ; "></p>
+<p><img data-src="img/mod_3.png" class="absolute" style="top: 1250px; left: ; width: ; "> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+<h3 id="interpretation-of-unstandardized-regression-weights-if-a-moderation-effect-exists">Interpretation of (unstandardized) regression-weights if a moderation effect exists</h3>
+<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+</section>
+<section id="moderation-analysis-with-process" class="slide level2">
+<h2>Moderation analysis with Process</h2>
+<p><img data-src="img/process_mod_1.png" class="absolute" style="top: 70px; left: ; width: ; "></p>
+</section>
+<section id="process---output" class="slide level2 scrollable">
+<h2>PROCESS - Output</h2>
+<div class="panel-tabset">
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">info</a></li><li><a href="#tabset-5-2">Output</a></li><li><a href="#tabset-5-3">JND</a></li><li><a href="#tabset-5-4">PROCESS Interaction Diagram</a></li></ul>
+<div class="tab-content">
+<div id="tabset-5-1">
+<p><img data-src="img/process_mod_4.png" class="absolute" style="top: 200px; left: ; width: ; "></p>
+</div>
+<div id="tabset-5-2">
+<p><img data-src="img/process_mod_2.png" class="absolute" style="top: 200px; left: ; width: ; "> ###</p>
+</div>
+<div id="tabset-5-3">
+<p><img data-src="img/process_mod_3.png" class="absolute" style="top: 200px; left: ; width: ; "></p>
+</div>
+<div id="tabset-5-4">
+<p><img data-src="img/process_mod_5.png" class="absolute" style="top: 200px; left: ; width: ; "></p>
+</div>
+</div>
+</div>
+</section>
+<section id="process-limitations" class="slide level2 scrollable">
+<h2>PROCESS Limitations</h2>
+<div class="small-text">
+<p>In this example, a dichotomous IV and a metric moderator variable (and their interaction term) were included in the regression model.</p>
+<ul>
+<li>If you use a dichotomous moderator, there is no need to output the Johnson &amp; Neyman significance regions</li>
+<li>The use of a categorical variable (as IV or moderator ➜ dummy coding) is not explicitly considered here. Instructions can be found on the Internet.</li>
+</ul>
+<p>PROCESS CANNOT be used to Therefore, the interaction term IV * moderator must first be created in SPSS in the form of a new variable</p>
+<ul>
+<li><p><code>Transform ➜ Compute variable</code></p></li>
+<li><p>This variable is then entered into the regression together with IV and moderator in the regression</p></li>
+</ul>
+</div>
+</section>
+<section id="interpretation-of-moderation-analysis" class="slide level2 scrollable">
+<h2>Interpretation of Moderation Analysis</h2>
+<p><img data-src="img/process_mod_int1.png" class="absolute" style="top: 70px; left: ; width: ; "> <img data-src="img/process_mod_int2.png" class="absolute" style="top: 570px; left: ; width: ; "></p>
+</section>
+<section id="estimation-and-interpretation-of-the-parameters-of-centered-predictors" class="slide level2">
+<h2>Estimation and interpretation of the parameters of centered predictors</h2>
+<p><img data-src="img/process_mod_int3.png" class="absolute" style="top: 170px; left: ; width: ; "></p>
+</section>
+<section id="example-simple-moderation" class="slide level2">
+<h2>Example – simple Moderation</h2>
+<p><img data-src="img/process_mod_int4.png" class="absolute" style="top: 70px; left: ; width: ; "></p>
+</section>
+<section id="mediation-concept" class="slide level2">
+<h2>Mediation concept</h2>
+<p><img data-src="img/med_1.png" class="absolute" style="top: 70px; left: ; width: ; "></p>
+</section>
+<section id="mediation-process" class="slide level2 scrollable">
+<h2>Mediation PROCESS</h2>
+<p><img data-src="img/process_med_1.png" class="absolute" style="top: 50px; left: ; width: ; "></p>
+<p><img data-src="img/process_med_2.png" class="absolute" style="top: 500px; left: 0px; width: ; "> <img data-src="img/process_med_3.png" class="absolute" style="top: 950px; left: ; width: ; "></p>
+</section>
+<section id="mediation---presenting-results" class="slide level2">
+<h2>Mediation - presenting results</h2>
+<p>No general standards available</p>
+<p><strong>Recomendations: </strong> Graphical representation + reporting results in the text or APA-table for MLR Path coefficients (a, b, a*b, c‘) ➜ (un)standardized, SE, bootstrapping confidence interval</p>
+<p><br></p>
+<p><strong>Effect size: </strong> Dichotomous predictor → partially standardized effect (unstd. a<em>b / SDY) Continuous predictor → fully standardized effect (unstd. a</em>b / SDY / SDX )</p>
+<p>Further guidelines for result presentation can be found online e.g.&nbsp;<a href="http://www.regorz-statistik.de/inhalte/tutorial_mediator_bootstrapping_process.html#:~:text=Beim%20partiell%20standardisierten%20Effekt%20wird,an%20der%20abh%C3%A4ngigen%20Variable%20standardisiert">http://www.regorz-statistik.de/inhalte</a>.</p>
+</section>
+<section id="mediation-with-categorical-predictors" class="slide level2">
+<h2>Mediation with categorical predictors</h2>
+<p>A detailed description can be found, for example, in A. Field (2018). Please feel free to reach out by email if you have any questions regarding your analysis!</p>
+<p>Key points to remember: A categorical variable is dummy-coded One group serves as the reference/baseline for all other groups → 0-coding</p>
+<p>Video-tutorial: <a href="https://www.youtube.com/watch?v=r2_zw4G55X0">https://www.youtube.com/watch?v=r2_zw4G55X0</a></p>
 </section>
 <section id="reporting-your-results" class="slide level2">
 <h2>Reporting Your Results</h2>
@@ -806,7 +1330,7 @@
 <li>Graphs when useful</li>
 </ul></li>
 </ul>
-<p>✅ Example: &gt; “A significant correlation was found between X and Y, <em>r</em> = .45, <em>p</em> &lt; .01.”</p>
+<p>✅ Example: &gt; “A significant pearson correlation was found between X and Y, <em>r</em> = .45, <em>p</em> &lt; .001”</p>
 <aside class="notes">
 <p>Speaker notes go here.</p>
 <style type="text/css">

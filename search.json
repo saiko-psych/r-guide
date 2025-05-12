@@ -25,14 +25,28 @@
     "href": "presentations/fm2_statistics.html#access-to-spss",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "Access to SPSS",
-    "text": "Access to SPSS\n\n\nUse a PC at the University (e.g. PC-Room at the institut)\nBuy it (you can get it very cheap for one year while you study)\nRemote Desktop Access (very very slow -&gt; use only in emergancy!)\n\n\nSoftware for Students click here\n\n\nDo not buy it! You can almost always get to a PC on Campus -&gt; or better, use Open Source!"
+    "text": "Access to SPSS\n\n\nUse a PC at the University (e.g. PC-Room at the institut)\nBuy it (you can get it very cheap for one year while you study)\nRemote Desktop Access (very very slow ➜ use only in emergancy!)\n\n\nSoftware for Students click here\n\n\nDo not buy it! You can almost always get to a PC on Campus ➜ or better, use Open Source!"
   },
   {
     "objectID": "presentations/fm2_statistics.html#spss-gui---screens",
     "href": "presentations/fm2_statistics.html#spss-gui---screens",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "SPSS GUI - Screens",
-    "text": "SPSS GUI - Screens\nSPSS data files have the extension .sav Data View & Variable View - When you open SPSS you are in the Data View\nSPSS-Syntax have the extension .sps programmable command language Automatisierung, Reproduktion & Dokumentation von Analyseschritten\nSPSS-Outputs have the extension .spv Result of the analyses & error messages"
+    "text": "SPSS GUI - Screens\n\n\n\n\nSPSS data files have the extension .sav\n\nData View & Variable View When you open SPSS you are in the Data View\n\nSPSS-Syntax have the extension .sps\n\nprogrammable command language Automation, reproducibility\n\nSPSS-Outputs have the extension .spv\n\nResult of the analyses & error messages"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#spss-syntax-specifics",
+    "href": "presentations/fm2_statistics.html#spss-syntax-specifics",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "SPSS Syntax specifics",
+    "text": "SPSS Syntax specifics\n\n\n\nCommands can be selected and executed individually\nFunctions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run (if you run the whole syntax)!\n\n\n\n\n\n\n\n\nTip\n\n\nIt is best to mark the syntax command as a comment afterwards!\nUse (detailed) Comments („*“ before your text) in the Syntax! There must be a period at the end of a command!\nYou can use AI-tools to create Syntax code ;) always use the PASTE function ➜ and save your syntax!"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#spss-tips",
+    "href": "presentations/fm2_statistics.html#spss-tips",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "SPSS tips",
+    "text": "SPSS tips\n\nALWAYS use the “PASTE” command instead of “OK” to document each step in the syntax.\n\nyou can edit and/or copy any command in the syntax\neasy reproducable analysis\n\n\n\n\n\nUse the “OK” button instead of “PASTE”, only if you are working with the PROCESS macro\n\nEven if you prefer the graphical user interface to working with the syntax.\nalso you can turn on in the options that you get the commands in the output also"
   },
   {
     "objectID": "presentations/fm2_statistics.html#access-to-jamovi",
@@ -53,7 +67,7 @@
     "href": "presentations/fm2_statistics.html#access-to-r-studio",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "Access to R-Studio",
-    "text": "Access to R-Studio\n\n\nYou need to install R first and the R-Studio!\n\nDownload R\nDownload R-Studio\n\nchoose right installation (e.g. Windows, Mac, linux)\ndownload and install\nsetup -&gt; and only use R-Studio -&gt; never R\n\n\n\nhelp with R-Studio forum\n\n\nThe sooner you start with R-Studio the better for yourself -&gt; it is such a powerfull tool"
+    "text": "Access to R-Studio\n\n\nYou need to install R first and the R-Studio!\n\nDownload R\nDownload R-Studio\n\nchoose right installation (e.g. Windows, Mac, linux)\ndownload and install\nsetup ➜ and only use R-Studio ➜ never R\n\n\n\nhelp with R-Studio forum\n\n\nThe sooner you start with R-Studio the better for yourself ➜ it is such a powerfull tool"
   },
   {
     "objectID": "presentations/fm2_statistics.html#prerequisites-for-data-analysis",
@@ -77,46 +91,172 @@
     "text": "Data Import flowchart\n\n\n\n\n\nflowchart TD\n  subgraph s1[\" \"]\n    A[\"📁 Create folder structure\"]\n    n3{\"choose analysis tool\"}\n    n9[\"📥 Download csv file from LimeSurvey\n    --&gt; 💾 Save the raw file\"]\n    n10[\"📥 Download R(data file) & R(syntax file) & csv file from LimeSurvey\n    --&gt; 💾 Save the raw file\"]\n    n11[\"📥 Download SPSS-specific export & csv file from LimeSurvey\n    --&gt; 💾 Save the raw file\"]\n    n12[\"📝 name all variables and label them\"]\n    n13[\"🧪 Run the syntax file for the data file in R-Studio \n    -&gt; labels and names the variables for you\"]\n    n14[\"💾 Save the prepared file\"]\n    n18[\"🧪 Run the syntax file for the data file in SPSS \n    -&gt; labels and names the variables for you\"]\n    n19[\"📝 check if scales are correct\"]\n    n20[\"📝 check if scales, variable names and labels are correct \n    -&gt; adjust if needed\"]\n    n21[\"📝 check if scales, variable names and labels are correct \n    -&gt; adjust if needed\"]\n  end\n\n  A --&gt; n3\n  n3 -- jamovi --&gt; n9\n  n3 -- \"R-Studio\" --&gt; n10\n  n3 -- SPSS --&gt; n11\n  n9 --&gt; n12 --&gt; n19 --&gt;n14\n  n10 --&gt; n13 --&gt; n20 --&gt; n14\n  n11 --&gt; n18 --&gt; n21 --&gt; n14\n\n\n  classDef Aqua stroke:#46EDC8, fill:#DEFFF8, color:#378E7A\n  classDef Peach stroke:#FBB35A, fill:#FFEFDB, color:#8F632D\n  classDef Ash stroke:#999999, fill:#EEEEEE, color:#000000\n  classDef Sky stroke:#374D7C, fill:#E2EBFF, color:#374D7C\n  classDef Rose stroke:#FF5978, fill:#FFDFE5, color:#8E2236\n\n  class n3 Aqua\n  class n9 Peach\n  class n12 Peach\n  class n19 Peach\n  class n11 Rose\n  class n10 Sky\n  class n13 Sky\n  class n20 Sky\n  class n18 Rose\n  class n14 Ash\n\n\n\n\n\n\n\n\nSpeaker notes go here."
   },
   {
-    "objectID": "presentations/fm2_statistics.html#spss-specifics",
-    "href": "presentations/fm2_statistics.html#spss-specifics",
+    "objectID": "presentations/fm2_statistics.html#quick-overview-in-scales",
+    "href": "presentations/fm2_statistics.html#quick-overview-in-scales",
     "title": "FMII-SS25 Data analysis introduction",
-    "section": "SPSS specifics",
-    "text": "SPSS specifics\nSyntax: Commands can be selected and executed individually Functions such as the creation/modification of variables, z-standardization/recoding of variables etc. are executed each time the syntax is run! It is best to mark the syntax command as a comment afterwards! Use (detailed) Comments („*“ before your text) in the Syntax! There must be a period at the end of a command! You can use tools like Chat-GBT to create Syntax code ;)"
+    "section": "Quick Overview in Scales",
+    "text": "Quick Overview in Scales\n\nNominal: Categories with no order.\nOrdinal: Categories with a defined order.\nInterval: Equal distances but no true zero.\nRatio: Equal distances and a true zero.\n\n Properly understanding the type of data scale helps with choosing the right statistical methods."
   },
   {
-    "objectID": "presentations/fm2_statistics.html#step-1-data-preparation-spss",
-    "href": "presentations/fm2_statistics.html#step-1-data-preparation-spss",
+    "objectID": "presentations/fm2_statistics.html#the-right-scaling",
+    "href": "presentations/fm2_statistics.html#the-right-scaling",
     "title": "FMII-SS25 Data analysis introduction",
-    "section": "Step 1: Data Preparation (SPSS)",
-    "text": "Step 1: Data Preparation (SPSS)\n\nImport your dataset (e.g., CSV, Excel, sav)\nLabel your variables (Variable View)\nSet correct measurement levels\nRecode or compute variables as needed\n\n 📌 Check for missing data!\n\nSpeaker notes go here."
+    "section": "The right scaling",
+    "text": "The right scaling\n Nominal Scale\n\nCategories with no order.\nExamples: Gender, Country, Eye Color.\n\nOrdinal Scale\n\nCategories with a defined order.\nDifferences between categories are not uniform.\nExamples: Ranking (1st, 2nd, 3rd), Likert scale (Agree, Neutral, Disagree).\n\nInterval Scale\n\nOrdered data with equal intervals, but no absolute zero.\nExamples: Temperature (Celsius, Fahrenheit), IQ Scores.\n\nRatio Scale\n\nOrdered data with equal intervals and an absolute zero.\nExamples: Height, Weight, Age, Income."
   },
   {
-    "objectID": "presentations/fm2_statistics.html#step-2-basic-analyses-spss",
-    "href": "presentations/fm2_statistics.html#step-2-basic-analyses-spss",
+    "objectID": "presentations/fm2_statistics.html#assigning-scales-in-your-software",
+    "href": "presentations/fm2_statistics.html#assigning-scales-in-your-software",
     "title": "FMII-SS25 Data analysis introduction",
-    "section": "Step 2: Basic Analyses (SPSS)",
-    "text": "Step 2: Basic Analyses (SPSS)\n\nDescriptive statistics: Analyze &gt; Descriptive Statistics\nCorrelations: Analyze &gt; Correlate &gt; Bivariate\nT-tests & ANOVAs: Analyze &gt; Compare Means\nRegression: Analyze &gt; Regression &gt; Linear\n\n📝 Tip: Use “Paste” to see syntax!\n\nSpeaker notes go here."
+    "section": "Assigning Scales in your Software",
+    "text": "Assigning Scales in your Software\n\nevery variable is automatically assigned to a scale which the software think is fitting based on the values of the variable\ncertail analysis need variables with certain scales\n\nmanually rescale needed varibales\n\n\n\nIn the analysis softwaresyou can only choose between Nominal, Ordinal or Continuuous ➜ you have to choose right ➜ most alnalysis only let you do the analysis if the variables have the right scale!\nin all software tools every variable is automatically assigned to a scale which the software think is fitting based on the values ➜ many false scales (especially if you choose poor values in your survey)\nbut certail analysis need variables with certain scales!"
   },
   {
-    "objectID": "presentations/fm2_statistics.html#example-spss-output",
-    "href": "presentations/fm2_statistics.html#example-spss-output",
+    "objectID": "presentations/fm2_statistics.html#creating-new-variables",
+    "href": "presentations/fm2_statistics.html#creating-new-variables",
     "title": "FMII-SS25 Data analysis introduction",
-    "section": "Example: SPSS Output",
-    "text": "Example: SPSS Output\n\nDescribe what’s shown in a screenshot:\n\nTable with means\nSignificance values\nAPA-style report\n\n\n📸 (Add image with {.stretch} or similar if using Reveal.js)\n\nSpeaker notes go here."
+    "section": "Creating new Variables",
+    "text": "Creating new Variables\n\ninfoGUISPSS SyntaxSPSS tip\n\n\nIs needed for e.g.:\n\ntotal scores (questionnaires)\nMeans (questionnaires, reaction times)\ndifference value (reaction times)\n\n\n\n \n\n\n\n\n\n* create a total score\nCompute random_sum=random1 + random2.\nEXECUTE.\n\n* create a mean score\nCompute random_mean=(random1 + random2)/2.\nEXECUTE.\n\n* create a difference score\nCompute random_diff=random1 - random2.\nEXECUTE.\n\n\nIn the case of (e.g.) sum scores from a large number of variables, it is not necessary to enumerate all variables individually. The “to” command is used for this:\nInstead:\n\nx_sum=var1 + var2 + …\n\n-➜ \n\nx_sum=var1 to varN\n\nIn this case, however, the variables var1 to varN must follow each other directly in the variable view!"
   },
   {
-    "objectID": "presentations/fm2_statistics.html#bonus-jamovi-r",
-    "href": "presentations/fm2_statistics.html#bonus-jamovi-r",
+    "objectID": "presentations/fm2_statistics.html#recoding-existing-variabels",
+    "href": "presentations/fm2_statistics.html#recoding-existing-variabels",
     "title": "FMII-SS25 Data analysis introduction",
-    "section": "Bonus: Jamovi & R",
-    "text": "Bonus: Jamovi & R\nJamovi - Based on R, but with a GUI - Great for fast and clean outputs\nR - RStudio + tidyverse for flexible analysis - Requires coding, but great for reproducibility\n➡️ See our R Guide\n\nSpeaker notes go here."
+    "section": "Recoding existing variabels",
+    "text": "Recoding existing variabels\n\ninfoGUISPSS SyntaxSPSS tip\n\n\n\nremember to ALWAYS create new variables, never change existing ones\n\nIs needed for e.g.:\n\nSimplification of categorys\nInversion of scales\nCreation of dummy variables\nError corrections\nMediansplit\n\n\n\n  \n\n\n\n\n\n\n* simplification of categorys\nRECODE alte_variable (1 THRU 3 = 1) (4 THRU 7 = 2) (8 THRU 10 = 3) INTO neue_variable.\nEXECUTE.\n\n* inversion of scales\nRECODE alte_variable (1 = 6) (2 = 5) (3 = 4) (4 = 3) (5 = 2) (6 = 1) INTO neue_variable.\nEXECUTE.\n\n\n\nThe rules for recoding can also be entered via the graphical user interface instead of the syntax! Click on Change to add the newly defined variable as an output variable"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#reliability-analysis",
+    "href": "presentations/fm2_statistics.html#reliability-analysis",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Reliability Analysis",
+    "text": "Reliability Analysis\n\nTo assess the reliability (measurement accuracy, dependability, stability) of tests and measurements\nReliability values can be considered as the proportion of the true variance to the total variance of the test.\n\nCronbachs Alpha (α)\n\nDependent on:\n\n\nnumber of items\n\n\nvariance of the items\n\n\nvariance of the test scores\n\n\nCovariance/intercorrelation of the items\n\n\nα = Sample-dependent | the more items the higher α\nIt is a generalization of the split-half method (where each item is considered as an independent test part)\n\nA high α Is desirable for homogeneous constructs/tests\n\n.7 (Heterogeneous constructs, personality tests)\n.8 - .9 (Homogeneous constructs)\nover .9 (Performance tests)\n\nCAUTION: The frequently cited Kuder-Richardson formula (KR20) for dichotomous items is not explicitly provided in SPSS, but an adequate approximation can be calculated using Cronbach’s alpha.\n\nAlternative: McDonalds Omega (ω)\nLess strict assumptions (identical unstandardized loadings and error variances; essential τ-equivalence)\nRecommended when the items correlate with the latent construct to varying degrees. Integrated since version 27 in SPSS! ➜ you can use it :)"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#reliability-analysis-1",
+    "href": "presentations/fm2_statistics.html#reliability-analysis-1",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Reliability Analysis",
+    "text": "Reliability Analysis\n\nSPSS GUISPSS SyntaxSPSS tipSPSS output\n\n\n \n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExemplary syntax command\n\nRELIABILITY\n  /VARIABLES=TSC1 TSC2r TSC3r TSC4r TSC5r TSC6 TSC7r TSC8 TSC9r TSC10r TSC11 TSC12r TSC13r\n  /SCALE('ALL VARIABLES') ALL\n  /MODEL=ALPHA\n  /STATISTICS=DESCRIPTIVE SCALE CORR COV\n  /SUMMARY=TOTAL CORR.\n\n\n\nItems of a scale are dragged into the right field (be careful with reverse-coded items → use them accordingly!)\nClick on the framed statistics\nCopy the command into the syntax and execute it\n\n\n\n \n\n\n\n\nCronbachs Alpha Based on Standardized items uses correlations instead of covariances. This can be used, for example, when the items of a test are measured in different units.\nInter-Item Correlations\nThe mean of the correlations between all item pairs within the measurement instrument. Very high inter-item correlations may indicate redundant items. .15 - .50 is acceptable\n\n\n\n\n\n\n\n\nCorrected Ite-Total Correlation\n= Discriminative power (correlation of an item with the scale, excluding the respective item) Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait ➜ requires discriminative items. &gt;.25 is acceptable; .40 - .70 is good\n\nCronbachs alpha if deletes\n= Improvement/deterioration of Cronbach’s α by removing the respective item from the scale. In the present case, removing individual items would not lead to an improvement in α."
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#t-test",
+    "href": "presentations/fm2_statistics.html#t-test",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "t-test",
+    "text": "t-test\n\nSPSS GUISPSS SyntaxSPSS tipSPSS output\n\n\n \n \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExemplary syntax command\n\nRELIABILITY\n  /VARIABLES=TSC1 TSC2r TSC3r TSC4r TSC5r TSC6 TSC7r TSC8 TSC9r TSC10r TSC11 TSC12r TSC13r\n  /SCALE('ALL VARIABLES') ALL\n  /MODEL=ALPHA\n  /STATISTICS=DESCRIPTIVE SCALE CORR COV\n  /SUMMARY=TOTAL CORR.\n\n\n\nItems of a scale are dragged into the right field (be careful with reverse-coded items → use them accordingly!)\nClick on the framed statistics\nCopy the command into the syntax and execute it\n\n\n\n \n\n\n\n\nCronbachs Alpha Based on Standardized items uses correlations instead of covariances. This can be used, for example, when the items of a test are measured in different units.\nInter-Item Correlations\nThe mean of the correlations between all item pairs within the measurement instrument. Very high inter-item correlations may indicate redundant items. .15 - .50 is acceptable\n\n\n\n\n\n\n\n\nCorrected Ite-Total Correlation\n= Discriminative power (correlation of an item with the scale, excluding the respective item) Items of a scale should be able – when there is a high reliability – to distinguish between individuals with low and high levels of the trait ➜ requires discriminative items. &gt;.25 is acceptable; .40 - .70 is good\n\nCronbachs alpha if deletes\n= Improvement/deterioration of Cronbach’s α by removing the respective item from the scale. In the present case, removing individual items would not lead to an improvement in α.\n\n\n\n\n\nSpeaker notes go here.\n\n\nSpeaker notes go here."
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#anova-assumptions",
+    "href": "presentations/fm2_statistics.html#anova-assumptions",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "ANOVA Assumptions",
+    "text": "ANOVA Assumptions"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#anova---effect-sizes-hateta2-hateta2_p",
+    "href": "presentations/fm2_statistics.html#anova---effect-sizes-hateta2-hateta2_p",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "ANOVA - Effect Sizes \\(\\hat{\\eta}^2 \\, \\, \\hat{\\eta}^2_p\\)",
+    "text": "ANOVA - Effect Sizes \\(\\hat{\\eta}^2 \\, \\, \\hat{\\eta}^2_p\\)\n\n\n\n→ Both are measures of effect size within the context of analysis of variance\nη2 : Proportion of the total variance explained by the factor\n\nHow much of the variance in the dependent variable can be attributed to the individual factor?\nContra: Comparison of effect size with other analyses is not possible, as the effect size depends on which other effects are being tested in the analysis.\n\n η2p: All components except the variance of interest and the error variance are removed from the total variance (in the denominator)\n\nWhat is the proportion of the dependent variable’s variance attributed to the individual factor and the error that can be explained by each respective factor?\nPro: Comparable across different studies (small)\nContra: Partial effect size measures within a study cannot be summed to a total effect → Representation of the relationships between the effects within the analysis is not possible\n\n\n\n\n\n\\(\\hat{\\eta}^2 = \\frac{QS_{\\text{Factor}}}{QS_{\\text{Total}}}\\)\n\n\\(\\hat{\\eta}^2_p = \\frac{QS_{\\text{Factor}}}{QS_{\\text{Factor}} + QS_{\\text{Error}}}\\)"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#process-macro",
+    "href": "presentations/fm2_statistics.html#process-macro",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "PROCESS Macro",
+    "text": "PROCESS Macro\n\ninstallation\nuse for moderation- & mediation analysis"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#process-installation",
+    "href": "presentations/fm2_statistics.html#process-installation",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "PROCESS installation",
+    "text": "PROCESS installation\n\nPROCESS is a macro for SPSS developed by Andrew F. Hayes specifically designed for the analysis of mediated, moderated and conditional process models.\nIt simplifies the application of regression analyses, especially for more complex models that examine interaction effects or indirect mediation effects.\n Integration in SPSS \n\nhttps://processmacro.org/download.html\nhttps://haskayne.ucalgary.ca/CCRAM/resource-hub\n\n“Backup download link” should automatically download the desired .zip folder.\n\nAlternatively, you can take the detour via the website of the Canadian Centre for Research Analysis and Methods (step 2)\n\nUnzip the .zip-folder & start „process.sps“-(Syntax-) file\nIn the open SPSS-Syntax: Extensions ➜ Utilities ➜ Install custom Dialog (Compatibility Mode)\nSelect the folder, in witch the file „process.spd“ is safed + open it\nYou can select the macro under Analyze ➜ Regression"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#moderation-concept",
+    "href": "presentations/fm2_statistics.html#moderation-concept",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Moderation concept",
+    "text": "Moderation concept\n \n \nInterpretation of (unstandardized) regression-weights if a moderation effect exists"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#moderation-analysis-with-process",
+    "href": "presentations/fm2_statistics.html#moderation-analysis-with-process",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Moderation analysis with Process",
+    "text": "Moderation analysis with Process"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#process---output",
+    "href": "presentations/fm2_statistics.html#process---output",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "PROCESS - Output",
+    "text": "PROCESS - Output\n\ninfoOutputJNDPROCESS Interaction Diagram\n\n\n\n\n\n ###"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#process-limitations",
+    "href": "presentations/fm2_statistics.html#process-limitations",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "PROCESS Limitations",
+    "text": "PROCESS Limitations\n\nIn this example, a dichotomous IV and a metric moderator variable (and their interaction term) were included in the regression model.\n\nIf you use a dichotomous moderator, there is no need to output the Johnson & Neyman significance regions\nThe use of a categorical variable (as IV or moderator ➜ dummy coding) is not explicitly considered here. Instructions can be found on the Internet.\n\nPROCESS CANNOT be used to Therefore, the interaction term IV * moderator must first be created in SPSS in the form of a new variable\n\nTransform ➜ Compute variable\nThis variable is then entered into the regression together with IV and moderator in the regression"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#interpretation-of-moderation-analysis",
+    "href": "presentations/fm2_statistics.html#interpretation-of-moderation-analysis",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Interpretation of Moderation Analysis",
+    "text": "Interpretation of Moderation Analysis"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#estimation-and-interpretation-of-the-parameters-of-centered-predictors",
+    "href": "presentations/fm2_statistics.html#estimation-and-interpretation-of-the-parameters-of-centered-predictors",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Estimation and interpretation of the parameters of centered predictors",
+    "text": "Estimation and interpretation of the parameters of centered predictors"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#example-simple-moderation",
+    "href": "presentations/fm2_statistics.html#example-simple-moderation",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Example – simple Moderation",
+    "text": "Example – simple Moderation"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#mediation-concept",
+    "href": "presentations/fm2_statistics.html#mediation-concept",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Mediation concept",
+    "text": "Mediation concept"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#mediation-process",
+    "href": "presentations/fm2_statistics.html#mediation-process",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Mediation PROCESS",
+    "text": "Mediation PROCESS"
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#mediation---presenting-results",
+    "href": "presentations/fm2_statistics.html#mediation---presenting-results",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Mediation - presenting results",
+    "text": "Mediation - presenting results\nNo general standards available\nRecomendations:  Graphical representation + reporting results in the text or APA-table for MLR Path coefficients (a, b, a*b, c‘) ➜ (un)standardized, SE, bootstrapping confidence interval\n\nEffect size:  Dichotomous predictor → partially standardized effect (unstd. ab / SDY) Continuous predictor → fully standardized effect (unstd. ab / SDY / SDX )\nFurther guidelines for result presentation can be found online e.g. http://www.regorz-statistik.de/inhalte."
+  },
+  {
+    "objectID": "presentations/fm2_statistics.html#mediation-with-categorical-predictors",
+    "href": "presentations/fm2_statistics.html#mediation-with-categorical-predictors",
+    "title": "FMII-SS25 Data analysis introduction",
+    "section": "Mediation with categorical predictors",
+    "text": "Mediation with categorical predictors\nA detailed description can be found, for example, in A. Field (2018). Please feel free to reach out by email if you have any questions regarding your analysis!\nKey points to remember: A categorical variable is dummy-coded One group serves as the reference/baseline for all other groups → 0-coding\nVideo-tutorial: https://www.youtube.com/watch?v=r2_zw4G55X0"
   },
   {
     "objectID": "presentations/fm2_statistics.html#reporting-your-results",
     "href": "presentations/fm2_statistics.html#reporting-your-results",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "Reporting Your Results",
-    "text": "Reporting Your Results\n\nFollow APA guidelines\nReport:\n\nTest type\nTest statistic (e.g., t, F, r)\np-values and effect sizes\nGraphs when useful\n\n\n✅ Example: &gt; “A significant correlation was found between X and Y, r = .45, p &lt; .01.”\n\nSpeaker notes go here."
+    "text": "Reporting Your Results\n\nFollow APA guidelines\nReport:\n\nTest type\nTest statistic (e.g., t, F, r)\np-values and effect sizes\nGraphs when useful\n\n\n✅ Example: &gt; “A significant pearson correlation was found between X and Y, r = .45, p &lt; .001”\n\nSpeaker notes go here."
   },
   {
     "objectID": "presentations/fm2_statistics.html#resources-support",
