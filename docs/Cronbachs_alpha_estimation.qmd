@@ -1,0 +1,82 @@
+---
+title: "Cronbachs alpha estimation"
+format: pdf
+editor: source
+bibliography: references.bib
+---
+
+# Cronbach's alpha estimation with R
+
+## Explanations of the Sections:
+
+-   **Bonett-Formula**: Provides a mathematical way to estimate the required sample size based on desired Cronbach's Alpha, test power, confidence level, and the number of items in the test.
+-   **presize package**: provides a quick way in R to calculate the required sample size of cronbachs alpha based on a different approach.
+-   **R-code**: Shows how to implement the sample size calculation using the @bonett2002alpha method, as well as an alternative using the `presize` package.
+
+## Via the Bonett-Formula
+
+The required sample size $N$ for Cronbach's Alpha can be calculated using the **Bonett-Formula** [@bonett2002alpha]
+
+$$
+N = \frac{(Z_{\alpha/2} + Z_{\beta})^2 \cdot (1 - \alpha) \cdot k}{\alpha}
+$$
+
+### Explanations:
+
+-   $N$ : Required sample size
+-   $\alpha$: Desired Cronbach's Alpha (e.g., 0.7 or 0.8)
+-   $Z_{\alpha/2}$: The critical Z-value for the confidence level (e.g., for a 95% confidence interval, the value is 1.96)
+-   $Z_{\beta}$: The critical Z-value for the test power (e.g., for 80% power, the value is 0.84)
+-   $k$: Number of items in the test (e.g., 10 items)
+
+The formula calculates the minimum sample size required to achieve a desired Cronbach's Alpha with a given test power and confidence level.
+
+### Code example
+
+```{r}
+# Input parameters
+alpha1 <- 0.8     # Expected Cronbach's Alpha
+alpha0 <- 0.70    # Minimum value (null hypothesis)
+k <- 23           # Number of items
+alpha <- 0.05     # Significance level
+power <- 0.80     # Desired power
+
+# Z-values
+z_alpha <- qnorm(1 - alpha / 2)
+z_beta <- qnorm(power)
+
+# Calculation of required sample size according to Bonett (2002)
+log_term <- log((1 - alpha0) / (1 - alpha1))
+numerator <- (z_alpha + z_beta)^2
+denominator <- log_term^2
+multiplier <- (2 * (k - 1) / k)^2
+
+n <- ceiling(numerator / denominator * multiplier)
+
+cat("Required sample size:", n, "\n")
+
+
+```
+
+## via the `presize` - package [@presize] 
+
+### code example
+
+```{r}
+#install.packages("presize") 
+
+library(presize)
+prec_cronb(k = 23, calpha = 0.8, n = NULL, conf.level = 0.95, conf.width = 0.1)
+
+
+```
+
+### Explanations:
+
+-   $N$: Required sample size
+-   $calpha$: expected Cronbach's Alpha (e.g., 0.7 or 0.8)
+-   $conf.level$ : confidence level
+-   $conf.width$: precision (the full width of the confidence interval). is 0.84)
+-   $k$: Number of items in the test (e.g., 10 items)
+
+# References

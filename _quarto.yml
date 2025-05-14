@@ -22,6 +22,9 @@ website:
         - text: "About Page"
           href: about.qmd
 
+comments:
+  hypothesis: 
+    theme: clean
 
 
 format:

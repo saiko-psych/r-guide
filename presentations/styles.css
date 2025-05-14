@@ -67,3 +67,8 @@
   z-index: 10;
 }
 
+
+.small-note {
+  font-size: 0.8em;
+  color: #666; /* Optional: leicht ausgegraut */
+}

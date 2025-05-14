@@ -1,27 +1,50 @@
 ---
-title: "R-Guide"
+title: "Psychology BSc Statistic Help"
+---
+
+<br>
+
+{{< video https://www.youtube.com/watch?v=ooLgm9xo2Ho
+    title="Timothee Statistics"
+    start="0"
+    aspect-ratio="21x9" 
+>}}
+
+<br>
+
+Welcome to your go-to resource for mastering statistics and research methods in psychology!
+
+This website is designed specifically for psychology students at the University of Graz. Here, you'll find clear and practical guidance on statistical concepts, research methodology, and—most importantly—how to use statistical software such as **R**, **jamovi**, and **SPSS**.
+
+Whether you're preparing for exams, working on your thesis, or just trying to understand your data, this site will support you with:
+
+- Step-by-step tutorials
+- Real examples from psychology
+- Explanations in plain language
+- Tips and tricks for common software
+
+Let’s make statistics less intimidating—and more useful!
+
+> *"You don't need to love numbers—you just need to know how to make them work for you."*
+
 ---
 
 
 
-# Welcome fellow peoples
-
-This site is a curated collection of resources for working efficiently with **R** — from beginner-friendly guides to reusable templates and workflows.
-
-
-
-📚 **What you’ll find here**:
-
-  - Practical **tutorials** on using R and the tidyverse
-  - Clean, ready-to-use **Quarto and RMarkdown templates**
-  - Tips on **reproducibility**, **renv**, and project structure
-  - Example projects and **GitHub-ready setups**
-
+### Presentations
+  
+  - [FMII-Data analysis](presentations/fm2_statistics.qmd)
 ---
+
+<br>
+
+### PDF's
+
+  - [Result sheet](docs/stat_restults.pdf)
+  - [g-power Cronbachs alpha](docs/Cronbachs_alpha_estimation.qmd)
+  - [statistic for BSc](docs/statistic_for_BSc_12112024.pdf)
+---
+  
+<br><br><br>
 
 Want to know more? [Read about this project](about.qmd)
-
-
-Presentations
-
-  - [FMII-Data analysis](presentations/fm2_statistics.qmd)
