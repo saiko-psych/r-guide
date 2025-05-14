@@ -228,14 +228,14 @@
     "href": "presentations/fm2_statistics.html#one-way-anova-without-repeated-measurements-spss",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "One-Way ANOVA without repeated measurements SPSS",
-    "text": "One-Way ANOVA without repeated measurements SPSS\nBefore we start with the analysis we should check if our Assumptions are met!\nThis ANOVA is used to examine differences in a variable across more than 2 (independent) groups\n\nGUISyntaxOutput"
+    "text": "One-Way ANOVA without repeated measurements SPSS\nBefore we start with the analysis we should check if our Assumptions are met!\nThis ANOVA is used to examine differences in a variable across more than 2 (independent) groups\n\nGUIEMMSyntaxOutput\n\n\n\n\n\n \n\n\n\nAlso referred to as “estimated marginal means” or “least squares means“\nThese estimated means represent a form of “standardized means”\nImportant for interpreting the effects of categorical predictors within the model, especially when the sample sizes between the groups vary or when the model includes covariates\nAlways select for interactions and when an independent variable has more than 2 levels!\n\nCaution: Post-Hoc-Tests under Post Hoc... are generally only possible for between-subjects factors. For multifactorial ANOVAs, it is best to conduct these through “EM Means”\n\nUSE BONFERRONI\n\n\n\nExemplary syntax command\n\nUNIANOVA Pruefungsangst_T1 BY Studienrichtung\n  /METHOD=SSTYPE(3)\n  /INTERCEPT=INCLUDE\n  /PLOT=PROFILE(Studienrichtung) TYPE=BAR ERRORBAR=CI MEANREFERENCE=NO\n  /EMMEANS=TABLES(Studienrichtung) COMPARE ADJ(BONFERRONI)\n  /PRINT ETASQ DESCRIPTIVE HOMOGENEITY\n  /CRITERIA=ALPHA(.05)\n  /DESIGN=Studienrichtung.\n\n\n\n \n\n  \n\n\n\n\n\nThe Levene’s test for homogeneity of variances checks whether the variances in the different groups are equal (= H0).If a significant result is found, it can be “ignored” in the case of a conservative method for correction in pairwise comparisons (e.g., Bonferroni), but it should still be reported!"
   },
   {
     "objectID": "presentations/fm2_statistics.html#anova-reporting-results",
     "href": "presentations/fm2_statistics.html#anova-reporting-results",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "ANOVA reporting results",
-    "text": "ANOVA reporting results"
+    "text": "ANOVA reporting results\n\nInfoExample\n\n\nRelevant descriptive statistics (either mentioned in the text or referenced in an APA-compliant table)\n\nFactor + levels\nN, M, SD of the groups\nEstimated population means and standard errors for (used) pairwise comparisons\n\nF-/Omnibus test:\n\nF(df_UV, df_Error) = F-value, p = p-value, \\(\\eta_p^2\\) = value\n\nMean difference, standard error, and p-value for all pairwise comparisons\n\nSignificant pairwise comparisons should be discussed in the text. Non-significant pairwise comparisons can be presented in an APA-compliant table, with a reference to the table in the text\n\nIn the case of a significant Mauchly’s Test of Sphericity in a one-way ANOVA with a within-subjects factor, the correction method used (e.g., Greenhouse-Geisser) must also be reported.\n\n\nAlways prioritize the substantive conclusion, with statistical values serving only to support the statement!\n\nDon‘t: “The three groups differ significantly from each other.“\n\nExample Report\n\n„A one-way repeated measures ANOVA was conducted with the repeated measures factor [Factor Name]. The descriptive statistics can be found in Table 1. The results indicated that students from the fields of psychology, history, and business administration significantly differed in perceived exam anxiety (report F-test correctly). Pairwise comparisons further revealed that psychology students had significantly higher levels of exam anxiety than business administration students (report pairwise comparison). No significant differences were found otherwise (see Table X; reference to table with non-significant pairwise comparisons)”"
   },
   {
     "objectID": "presentations/fm2_statistics.html#process-macro",
@@ -361,14 +361,14 @@
     "href": "presentations/fm2_statistics.html#resources-support",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "Resources & Support",
-    "text": "Resources & Support\n\nSaiko Psychology R Guide\nSPSS video tutorials\ndiscovR\nR-Studio video tutorials\nJamovi.org documentation\nAsk your instructor or TA\nAI Tools\n\n🧠 Practice = confidence!\n\nSpeaker notes go here."
+    "text": "Resources & Support\n\nSaiko Psychology R Guide\nSPSS video tutorials\ndiscovR\nQuarto tutorials\nR-Studio tutorials\nAsk your instructor or TA\nAI Tools (e.g. Mistral, Claude)\n\n🧠 Practice = confidence!\n\nSpeaker notes go here."
   },
   {
     "objectID": "presentations/fm2_statistics.html#lets-practice",
     "href": "presentations/fm2_statistics.html#lets-practice",
     "title": "FMII-SS25 Data analysis introduction",
     "section": "Let’s Practice!",
-    "text": "Let’s Practice!\n\nOpen SPSS and import example_data.csv\nIdentify variable types\nRun a descriptive analysis\nTry a correlation or t-test\n\n💬 Ask questions as we go!\n\nSpeaker notes go here.\n\n\n\n\n\nall resources for you"
+    "text": "Let’s Practice!\n\nOpen your Data in SPSS\nIdentify variable types\nRun a descriptive analysis\nCalculate Cronbach’s alpha\nTry a correlation or t-test\n\n💬 Ask questions as we go!\n\nSpeaker notes go here.\n\n\n\n\n\nall resources for you"
   },
   {
     "objectID": "docs/fmII_data_prep_r.html",

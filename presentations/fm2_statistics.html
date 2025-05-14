@@ -1543,22 +1543,95 @@ t = \frac{(\bar{x}_1 - \bar{x}_2) - \mu_0}{\sqrt{\frac{s^2_{\text{diff}}}{n}}}
 <p>Before we start with the analysis we should check if our Assumptions are met!</p>
 <p>This ANOVA is used to examine differences in a variable across more than 2 (independent) groups</p>
 <div class="panel-tabset">
-<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">GUI</a></li><li><a href="#tabset-10-2">Syntax</a></li><li><a href="#tabset-10-3">Output</a></li></ul>
+<ul id="tabset-10" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-10-1">GUI</a></li><li><a href="#tabset-10-2">EMM</a></li><li><a href="#tabset-10-3">Syntax</a></li><li><a href="#tabset-10-4">Output</a></li></ul>
 <div class="tab-content">
 <div id="tabset-10-1">
-
+<p><img data-src="img/anova_within_in_1.png" class="absolute" style="top: 500px; left: ; width: 300px; "></p>
+<p><img data-src="img/anova_within_in_2.png" class="absolute" style="top: 500px; left: 340px; width: 300px; "></p>
+<p><img data-src="img/anova_within_in_3.png" class="absolute" style="top: 500px; left: 670px; width: 300px; "></p>
+<p><img data-src="img/anova_within_in_4.png" class="absolute" style="top: 850px; left: 670px; width: 300px; "> <img data-src="img/anova_within_in_5.png" class="absolute" style="top: 1060px; left: 670px; width: 300px; "></p>
+<p><img data-src="img/anova_within_in_6.png" class="absolute" style="top: 1300px; left: 670px; width: 300px; "></p>
 </div>
 <div id="tabset-10-2">
-
+<p>Also referred to as “estimated marginal means” or “least squares means“</p>
+<p>These estimated means represent a form of “standardized means”</p>
+<p>Important for interpreting the effects of categorical predictors within the model, especially when the sample sizes between the groups vary or when the model includes covariates</p>
+<p>Always select for interactions and when an independent variable has more than 2 levels!</p>
+<p><br></p>
+<p><strong>Caution:</strong> Post-Hoc-Tests under <code>Post Hoc...</code> are generally only possible for between-subjects factors. For multifactorial ANOVAs, it is best to conduct these through “EM Means”</p>
+<p><br></p>
+<p>USE BONFERRONI</p>
+<p><img data-src="img/emm.png" class="absolute" style="top: 1400px; left: ; width: 1000px; "></p>
 </div>
 <div id="tabset-10-3">
-
+<p>Exemplary syntax command</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource spss number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a></span>
+<span id="cb12-2"><a></a>UNIANOVA Pruefungsangst_T1 BY Studienrichtung</span>
+<span id="cb12-3"><a></a>  /METHOD=SSTYPE(3)</span>
+<span id="cb12-4"><a></a>  /INTERCEPT=INCLUDE</span>
+<span id="cb12-5"><a></a>  /PLOT=PROFILE(Studienrichtung) TYPE=BAR ERRORBAR=CI MEANREFERENCE=NO</span>
+<span id="cb12-6"><a></a>  /EMMEANS=TABLES(Studienrichtung) COMPARE ADJ(BONFERRONI)</span>
+<span id="cb12-7"><a></a>  /PRINT ETASQ DESCRIPTIVE HOMOGENEITY</span>
+<span id="cb12-8"><a></a>  /CRITERIA=ALPHA(.05)</span>
+<span id="cb12-9"><a></a>  /DESIGN=Studienrichtung.</span>
+<span id="cb12-10"><a></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-10-4">
+<p><img data-src="img/anova_within_out_1.png" class="absolute" style="top: 500px; left: ; width: 400px; "> <img data-src="img/anova_within_out_2.png" class="absolute" style="top: 500px; left: 500px; width: 500px; "></p>
+<p><img data-src="img/anova_within_out_3.png" class="absolute" style="top: 800px; left: ; width: 1000px; "></p>
+<p><img data-src="img/anova_within_out_4.png" class="absolute" style="top: 1200px; left: ; width: 1000px; "> <img data-src="img/anova_within_out_5.png" class="absolute" style="top: 1600px; left: ; width: 800px; "> <img data-src="img/anova_within_out_6.png" class="absolute" style="top: 2000px; left: ; width: 1000px; "></p>
+<p><img data-src="img/anova_within_out_7.png" class="absolute" style="top: 2500px; left: ; width: 1000px; "></p>
 </div>
 </div>
 </div>
+<aside class="notes">
+<p>The Levene’s test for homogeneity of variances checks whether the variances in the different groups are equal (= H0).If a significant result is found, it can be “ignored” in the case of a conservative method for correction in pairwise comparisons (e.g., Bonferroni), but it should still be reported!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section>
-<section id="anova-reporting-results" class="slide level2">
+<section id="anova-reporting-results" class="slide level2 scrollable">
 <h2>ANOVA reporting results</h2>
+<div class="panel-tabset">
+<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">Info</a></li><li><a href="#tabset-11-2">Example</a></li></ul>
+<div class="tab-content">
+<div id="tabset-11-1">
+<p>Relevant descriptive statistics (either mentioned in the text or referenced in an APA-compliant table)</p>
+<ul>
+<li>Factor + levels</li>
+<li>N, M, SD of the groups</li>
+<li>Estimated population means and standard errors for (used) pairwise comparisons</li>
+</ul>
+<p>F-/Omnibus test:</p>
+<ul>
+<li><em>F</em>(df_UV, df_Error) = F-value, <em>p</em> = p-value, <span class="math inline">\(\eta_p^2\)</span> = value</li>
+</ul>
+<p>Mean difference, standard error, and p-value for all pairwise comparisons</p>
+<ul>
+<li>Significant pairwise comparisons should be discussed in the text. Non-significant pairwise comparisons can be presented in an APA-compliant table, with a reference to the table in the text</li>
+</ul>
+<p>In the case of a significant Mauchly’s Test of Sphericity in a one-way ANOVA with a within-subjects factor, the correction method used (e.g., Greenhouse-Geisser) must also be reported.</p>
+</div>
+<div id="tabset-11-2">
+<p>Always prioritize the substantive conclusion, with statistical values serving only to support the statement!</p>
+<ul>
+<li>Don‘t: “The three groups differ significantly from each other.“</li>
+</ul>
+<h4 id="example-report">Example Report</h4>
+<blockquote>
+<p>„A one-way repeated measures ANOVA was conducted with the repeated measures factor [Factor Name]. The descriptive statistics can be found in Table 1. The results indicated that students from the fields of psychology, history, and business administration significantly differed in perceived exam anxiety (report F-test correctly). Pairwise comparisons further revealed that psychology students had significantly higher levels of exam anxiety than business administration students (report pairwise comparison). No significant differences were found otherwise (see Table X; reference to table with non-significant pairwise comparisons)”</p>
+</blockquote>
+</div>
+</div>
+</div>
 </section>
 <section id="process-macro" class="slide level2">
 <h2>PROCESS Macro</h2>
@@ -1601,18 +1674,18 @@ Alternatively, you can take the detour via the website of the Canadian Centre fo
 <section id="process---output" class="slide level2 scrollable">
 <h2>PROCESS - Output</h2>
 <div class="panel-tabset">
-<ul id="tabset-11" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-11-1">info</a></li><li><a href="#tabset-11-2">Output</a></li><li><a href="#tabset-11-3">JND</a></li><li><a href="#tabset-11-4">PROCESS Interaction Diagram</a></li></ul>
+<ul id="tabset-12" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-12-1">info</a></li><li><a href="#tabset-12-2">Output</a></li><li><a href="#tabset-12-3">JND</a></li><li><a href="#tabset-12-4">PROCESS Interaction Diagram</a></li></ul>
 <div class="tab-content">
-<div id="tabset-11-1">
+<div id="tabset-12-1">
 <p><img data-src="img/process_mod_4.png" class="absolute" style="top: 200px; left: ; width: ; "></p>
 </div>
-<div id="tabset-11-2">
+<div id="tabset-12-2">
 <p><img data-src="img/process_mod_2.png" class="absolute" style="top: 200px; left: ; width: ; "> ###</p>
 </div>
-<div id="tabset-11-3">
+<div id="tabset-12-3">
 <p><img data-src="img/process_mod_3.png" class="absolute" style="top: 200px; left: ; width: ; "></p>
 </div>
-<div id="tabset-11-4">
+<div id="tabset-12-4">
 <p><img data-src="img/process_mod_5.png" class="absolute" style="top: 200px; left: ; width: ; "></p>
 </div>
 </div>
@@ -1787,12 +1860,12 @@ Alternatively, you can take the detour via the website of the Canadian Centre fo
 <h2>Resources &amp; Support</h2>
 <ul>
 <li><a href="https://saiko-psych.github.io/r-guide/">Saiko Psychology R Guide</a></li>
-<li>SPSS video tutorials</li>
-<li>discovR</li>
-<li>R-Studio video tutorials</li>
-<li>Jamovi.org documentation</li>
+<li><a href="https://www.youtube.com/watch?v=b163iBByycw&amp;list=PL25257A24840423AE">SPSS video tutorials</a></li>
+<li><a href="https://www.discovr.rocks/discovr/">discovR</a></li>
+<li><a href="https://www.youtube.com/watch?v=4rKWIJXe3mA&amp;list=PLEzw67WWDg80-fT1hq2IZf7D62tRmKy8f">Quarto tutorials</a></li>
+<li><a href="https://www.youtube.com/watch?v=b163iBByycw&amp;list=PL25257A24840423AE">R-Studio tutorials</a></li>
 <li>Ask your instructor or TA</li>
-<li>AI Tools</li>
+<li>AI Tools (e.g.&nbsp;Mistral, Claude)</li>
 </ul>
 <p>🧠 Practice = confidence!</p>
 <aside class="notes">
@@ -1812,9 +1885,10 @@ Alternatively, you can take the detour via the website of the Canadian Centre fo
 <section id="lets-practice" class="slide level2">
 <h2>Let’s Practice!</h2>
 <ul>
-<li>Open SPSS and import <code>example_data.csv</code></li>
+<li>Open your Data in SPSS</li>
 <li>Identify variable types</li>
 <li>Run a descriptive analysis</li>
+<li>Calculate Cronbach’s alpha</li>
 <li>Try a correlation or t-test</li>
 </ul>
 <p>💬 Ask questions as we go!</p>
