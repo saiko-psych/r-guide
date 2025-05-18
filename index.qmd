@@ -52,3 +52,10 @@ Let’s make statistics less intimidating—and more useful!
 <br><br><br>
 
 Want to know more? [Read about this project](about.qmd)
+
+
+
+
+
+
+

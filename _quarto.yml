@@ -3,12 +3,12 @@ project:
   
 website: 
   page-navigation: true
-  favicon: img/logo_2.png
+  favicon: img/brain_icon.svg
   reader-mode: true
   title: R-Guide
   sidebar:
     title: Sidebar
-    logo: img/logo_2.png
+    logo: img/brain_icon.svg
     tools: 
       - icon: envelope
         href: "mailto:david.matischek@edu.uni-graz.at"
