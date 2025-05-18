@@ -45,6 +45,10 @@ Let’s make statistics less intimidating—and more useful!
   - [statistic for BSc](docs/statistic_for_BSc_12112024.pdf)
 ---
   
+### Links
+
+  - [Test-Retest reliability](https://www.scalestatistics.com/test-retest-reliability.html)
+  
 <br><br><br>
 
 Want to know more? [Read about this project](about.qmd)
